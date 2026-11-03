@@ -6,7 +6,8 @@ os.makedirs(OUT, exist_ok=True)
 SRC = json.load(open(ROOT + "/i18n-src.json", encoding="utf-8"))
 ns = {}; exec(open(ROOT + "/i18n-en.py", encoding="utf-8").read(), ns); EN = ns["EN"]
 ns2 = {}; exec(open(ROOT + "/i18n-extra.py", encoding="utf-8").read(), ns2); EXTRA = ns2["EXTRA"]
-D = dict(zip(SRC, EN)); D.update(EXTRA)
+ns3 = {}; exec(open(ROOT + "/i18n-nov.py", encoding="utf-8").read(), ns3); EXTRA.update({("@"+k[1:] if False else k): v for k, v in ns3["NOV"].items()})
+D = dict(zip(SRC, EN)); D.update({k[1:] if k.startswith("@") else k: v for k, v in EXTRA.items()})
 DU = {H.unescape(k): v for k, v in D.items()}
 
 PAGES = {
@@ -21,6 +22,14 @@ PAGES = {
  "repertoire.html": ("Repertoire of pop-rock covers | JamBag",
                 "JamBag's setlists: dance party, acoustic cocktail, ceremony, a French set and a Latin bonus. Timeless hits from the 70s to today."),
  "mentions-legales.html": ("Legal notice | JamBag", "Legal notice for jambag.fr."),
+ "formules.html": ("Line-ups and prices: solo, duo, trio, quartet | JamBag",
+                "Acoustic singer-guitarist, acoustic duo, trio or pop-rock quartet: JamBag's line-ups and prices, a live band from France for weddings and events."),
+ "videos.html": ("JamBag live videos | Pop-rock band from France",
+                "JamBag's quartet, trio, duo and solo sets on video: weddings, parties, big stages. Turn it up."),
+ "technique.html": ("Sound, lights and technical riders | JamBag",
+                "Sound, lights, set-up: how JamBag adapts to your venue. Download the technical riders for the solo, duo, trio and quartet."),
+ "devis.html": ("Request a quote | JamBag, live band from France",
+                "Plan your event in two minutes: date, venue, atmosphere, line-up. Carl calls you back quickly with a tailored proposal."),
 }
 
 FR_ARTISTS = {"Téléphone","Axelle Red","Clara Luciani","Eddy Mitchell","Gilbert Montagné","Amel Bent","Gims","Juliette Armanet",
@@ -151,7 +160,7 @@ for name, (title, desc) in PAGES.items():
         s = re.sub(r'(src|href|poster|data-srcs|action)="([^"]*)"', fix_path, s)
     s = s.replace("jambag-kit-entreprise.pdf", "jambag-company-kit.pdf")
     if name == "repertoire.html": s = rework_repertoire(s)
-    if name == "index.html": s = rework_index(s)
+    if name in ("index.html", "repertoire.html"): s = rework_index(s)
     open(f"{OUT}/{name}", "w", encoding="utf-8").write(s)
 
 if missing:

@@ -14,7 +14,19 @@ STAR='<svg viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M
 STARS='<span class="stars" role="img" aria-label="5 étoiles sur 5">'+STAR*5+'</span>'
 ARROW='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>'
 
-NAV=[("./","Le show"),("mariages.html","Mariages"),("entreprises.html","Entreprises"),("groupe.html","Le groupe"),("repertoire.html","Répertoire"),("blog/","Blog")]
+NAV=[("formules.html","Formules"),("mariages.html","Mariages"),("entreprises.html","Entreprises"),("videos.html","Vidéos"),("repertoire.html","Répertoire"),("groupe.html","Le groupe"),("blog/","Blog")]
+TEL='<a href="tel:+33661579154">06 61 57 91 54</a>'
+CALL_PICK=lambda: f'''<aside class="callpick" aria-label="Appeler Carl" hidden>
+  <button class="cp-open" type="button" aria-expanded="false" aria-controls="cp-card"><span class="cp-pick"><img {img_attr("carl-call")} alt="" loading="lazy"></span><span class="cp-l">Une question ?</span></button>
+  <div class="cp-card" id="cp-card" hidden>
+    <button class="cp-x" type="button" aria-label="Fermer">×</button>
+    <p class="cp-h">Une question ?<br><b>Carl vous répond.</b></p>
+    <p class="cp-p">Du lundi au samedi, de 9 h à 21 h.</p>
+    <a class="btn btn-ember" href="tel:+33661579154">Appeler Carl</a>
+    <a class="cp-alt" href="devis.html">Ou composez votre événement</a>
+  </div>
+</aside>'''
+
 
 def head(title, desc, canon, extra="", og="jambag-partage.jpg"):
     url=f"https://jambag.fr/{canon}"
@@ -61,13 +73,13 @@ def header(cur):
     <nav class="nav" aria-label="Navigation principale">{links}</nav>
     <div class="bar-right">
       <a class="lang" href="{{{{LANGHREF}}}}" hreflang="en" lang="en">EN</a>
-      <a class="btn btn-cream" href="./#contact">Composer ma soirée</a>
+      <a class="btn btn-cream" href="devis.html">Demander un devis</a>
       <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu" aria-label="Ouvrir le menu"><i></i></button>
     </div>
   </div>
 </header>
 <nav class="menu" id="menu" aria-label="Menu">
-  {mlinks}<a href="./#contact">Contact</a><a class="lang" href="{{{{LANGHREF}}}}" hreflang="en" lang="en">EN</a>
+  {mlinks}<a href="devis.html">Demander un devis</a><a class="lang" href="{{{{LANGHREF}}}}" hreflang="en" lang="en">EN</a>
   <div class="menu-foot"><a href="mailto:hello@jambag.fr">hello@jambag.fr</a><br><a href="tel:+33661579154">06 61 57 91 54</a></div>
 </nav>
 '''
@@ -82,18 +94,19 @@ def footer():
         {LOCKUP()}
         <p>Groupe pop-rock live basé à Lille. Mariages, réceptions, événements d'entreprise et grandes scènes, en France et à l'international.</p>
       </div>
-      <nav aria-label="Le site"><h4>Le site</h4>{"".join(f'<a href="{h}">{t}</a>' for h,t in NAV)}<a href="./#production">Fiches techniques</a><a href="./#contact">Composer ma soirée</a></nav>
+      <nav aria-label="Le site"><h4>Le site</h4>{"".join(f'<a href="{h}">{t}</a>' for h,t in NAV)}<a href="technique.html">Technique et fiches</a><a href="devis.html">Composer mon événement</a></nav>
       <nav aria-label="Contact"><h4>Contact</h4><a href="mailto:hello@jambag.fr">hello@jambag.fr</a><a href="tel:+33661579154">06 61 57 91 54</a><a href="https://www.instagram.com/jambagmusic/" target="_blank" rel="noopener">Instagram @jambagmusic</a></nav>
       <div><h4>Basés à Lille</h4><p style="margin:0">Hauts-de-France, Paris, Belgique, Côte d'Opale, partout en France et à l'international.</p></div>
     </div>
     <div class="legal">
       <span>© <span id="year">2026</span> JamBag. <a href="mentions-legales.html">Mentions légales</a></span>
-      <details class="credits"><summary>Crédits photo</summary><ul><li>Scènes et concerts : One Clap Studio</li><li>Cocktail en extérieur : Paul Sauvage</li><li>Portrait acoustique : Benoît Dechy</li><li>Mariage en salle : Julien Briche</li></ul></details>
+      <details class="credits"><summary>Crédits photo</summary><ul><li>Scènes et concerts : One Clap Studio</li><li>Cocktail en extérieur : Paul Sauvage</li><li>Portrait acoustique : Benoît Dechy</li><li>Mariage en salle : Julien Briche</li><li>Mariage d'Alix et Charles : Marie Guillaume</li></ul></details>
     </div>
     <div class="foot-mark" aria-hidden="true"><img {img_attr("jambag-logo.png")} alt="" loading="lazy"></div>
   </div>
 </footer>
 <div class="vmodal" role="dialog" aria-modal="true" aria-label="Vidéo"><button class="close" type="button" aria-label="Fermer la vidéo">×</button><div class="box"></div><p class="alt">La vidéo ne s'affiche pas ? <a href="#" target="_blank" rel="noopener">Ouvrir sur YouTube</a></p></div>
+{CALL_PICK()}
 <script src="js/site.js" defer></script>
 </body>
 </html>
@@ -128,6 +141,18 @@ if __name__=="__main__":
     render("groupe.html","Les musiciens de JamBag | Groupe pop-rock à Lille",
            "Carl, Quentin, Simon, Stanley et la famille JamBag : des musiciens professionnels de la région lilloise, formés ensemble à Tourcoing.",
            "groupe.html","groupe.html",G+crumbs("Le groupe","groupe.html"),og="partage-groupe.jpg")
+    render("formules.html","Formules et tarifs : solo, duo, trio, quartet | JamBag",
+           "Chanteur guitare-voix, duo acoustique, trio ou quartet pop-rock : les formules et tarifs de JamBag, groupe live basé à Lille, pour mariages et événements.",
+           "formules.html","formules.html",G+crumbs("Formules","formules.html"))
+    render("videos.html","Vidéos live de JamBag | Groupe pop-rock à Lille",
+           "Le quartet, le trio, le duo et les solos de JamBag en vidéo : mariages, soirées, grandes scènes. Montez le son.",
+           "videos.html","videos.html",G+crumbs("Vidéos","videos.html"))
+    render("technique.html","Technique et fiches techniques | JamBag",
+           "Son, lumière, installation : comment JamBag s'adapte à votre lieu. Téléchargez les fiches techniques du solo, du duo, du trio et du quartet.",
+           "technique.html","technique.html",G+crumbs("Technique","technique.html"))
+    render("devis.html","Demander un devis | JamBag, groupe live à Lille",
+           "Composez votre événement en deux minutes : date, lieu, ambiance, formule. Carl vous rappelle très vite avec une proposition sur mesure.",
+           "devis.html","devis.html",G+crumbs("Demander un devis","devis.html"))
     render("repertoire.html","Répertoire de reprises pop-rock et variété | JamBag",
            "Les setlists de JamBag : soirée dansante, cocktail acoustique, cérémonie et bonus latino. Des tubes intemporels, des années 70 à aujourd'hui.",
            "repertoire.html","repertoire.html",G+crumbs("Répertoire","repertoire.html"))

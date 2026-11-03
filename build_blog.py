@@ -37,7 +37,7 @@ def fdate(d, en=False):
 
 T = {
  "fr": dict(blog="Le blog", read="de lecture", more="Lire l'article", also_l="À lire", also_h="Aussi", sign="Carl, pour JamBag",
-            cta_l="Et pour votre", cta_h="Événement ?", cta_p="Racontez-nous votre projet, Carl vous rappelle.", cta_b="Composer ma soirée",
+            cta_l="Et pour votre", cta_h="Événement ?", cta_p="Racontez-nous votre projet, Carl vous rappelle.", cta_b="Composer mon événement",
             idx_title="Blog musique de mariage et d'événement | JamBag",
             idx_desc="Conseils pour la musique de votre mariage ou de votre événement d'entreprise : timing, chansons, technique, groupe ou DJ. Par le groupe live JamBag.",
             idx_h1=('Le blog', 'JamBag', " : conseils musique de mariage et d'événement"),
@@ -55,7 +55,7 @@ def cta(L):
   <div class="wrap">
     <h2 class="title" data-split><span class="light">{L["cta_l"]}</span><span class="heavy">{L["cta_h"]}</span></h2>
     <p class="lead" data-reveal>{L["cta_p"]}</p>
-    <a class="btn btn-cream" href="./#contact" data-reveal>{L["cta_b"]}</a>
+    <a class="btn btn-cream" href="devis.html" data-reveal>{L["cta_b"]}</a>
   </div>
 </section>'''
 
@@ -165,7 +165,7 @@ build_lang("fr", FR_POSTS, OUT_FR)
 build_lang("en", EN_POSTS, OUT_EN)
 
 # plan du site
-pairs = [(u, "en/" + u) for u in ["", "mariages.html", "entreprises.html", "groupe.html", "repertoire.html", "blog/"]]
+pairs = [(u, "en/" + u) for u in ["", "formules.html", "mariages.html", "entreprises.html", "videos.html", "repertoire.html", "groupe.html", "technique.html", "devis.html", "blog/"]]
 pairs = [(fr, en, "2026-10-21") for fr, en in pairs]
 pairs += [(f"blog/{p['fr']}.html", f"en/blog/{p['slug']}.html", p["date"]) for p in EN_POSTS]
 sm = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n'

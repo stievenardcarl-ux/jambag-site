@@ -489,18 +489,28 @@
     next.addEventListener("click",function(){if(valid(cur))show(cur+1)});
     back.addEventListener("click",function(){status.textContent="";show(cur-1)});
     $$('.w-step input[type="radio"]',wz).forEach(function(r){r.addEventListener("change",function(){if(r.closest(".auto-next")&&cur===0){setTimeout(function(){show(1)},260)}})});
-    var jbT0=Date.now();
+    var jbT0=Date.now(),sentAll=false,sentPart=false;
+    function partial(){
+      if(sentAll||sentPart||!navigator.sendBeacon)return;
+      var em=($('[name="email"]',wz)||{}).value||"",tl=($('[name="tel"]',wz)||{}).value||"";
+      if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em.trim())&&(tl.replace(/\D/g,"").length<6))return;
+      var fd=new FormData(wz);fd.set("partial","1");fd.set("jb_k","jb-"+(jbT0%997));fd.set("jb_t0",String(jbT0));fd.set("jb_t",String(Date.now()-jbT0));
+      if(EN)fd.set("langue","en");
+      sentPart=navigator.sendBeacon(wz.getAttribute("action"),fd);
+    }
+    document.addEventListener("visibilitychange",function(){if(document.visibilityState==="hidden")partial()});
+    window.addEventListener("pagehide",partial);
     wz.addEventListener("submit",function(ev){
       ev.preventDefault();if(!valid(cur))return;
       var fd=new FormData(wz),lines=[];fd.set("jb_k","jb-"+(jbT0%997));fd.set("jb_t0",String(jbT0));fd.set("jb_t",String(Date.now()-jbT0));
-      var labels={type:"Type d'événement",moments:"Moments",ambiance:"Ambiance",formule:"Formule envisagée",date:"Date",lieu:"Lieu",invites:"Invités",duree:"Durée souhaitée",technique:"Technique sur place",budget:"Budget envisagé pour la musique",nom:"Nom",societe:"Société",email:"E-mail",tel:"Téléphone",message:"Message"};if(EN)lines.push("Langue : anglais");
+      var labels={type:"Type d'événement",moments:"Moments",ambiance:"Ambiance",formule:"Formule envisagée",date:"Date",lieu:"Lieu",invites:"Invités",duree:"Durée souhaitée",technique:"Technique sur place",budget:"Budget envisagé pour la musique",chansons:"Chansons ou artistes",nom:"Nom",societe:"Société",email:"E-mail",tel:"Téléphone",message:"Message"};if(EN)lines.push("Langue : anglais");
       Object.keys(labels).forEach(function(k){var v=fd.getAll(k==="moments"?"moments[]":k).join(", ");if(v)lines.push(labels[k]+" : "+v)});
       var subject="Demande JamBag : "+(fd.get("type")||"événement")+(fd.get("date")?" du "+fd.get("date").split("-").reverse().join("/"):"");
       function mailto(){status.textContent=T("L'envoi direct n'a pas abouti : votre messagerie s'ouvre avec la demande déjà rédigée.","Sending failed: your email app is opening with the request already written.");window.location.href="mailto:hello@jambag.fr?subject="+encodeURIComponent(subject)+"&body="+encodeURIComponent(T("Bonjour,","Hello,")+"\n\n"+lines.join("\n"))}
       send.disabled=true;status.textContent=T("Envoi en cours…","Sending…");
       fetch(wz.getAttribute("action"),{method:"POST",body:fd,headers:{"Accept":"application/json"}})
         .then(function(r){return r.ok?r.json():Promise.reject()})
-        .then(function(j){if(!j||!j.ok)throw 0;wz.innerHTML='<div class="w-done"><span class="pick-mini" aria-hidden="true"></span><h3>'+T("Merci, votre demande est partie.","Thank you, your request has been sent.")+'</h3><p>'+T("Carl vous rappelle très vite pour en parler.","Carl will call you back very soon to talk it through.")+'</p></div>'})
+        .then(function(j){if(!j||!j.ok)throw 0;sentAll=true;wz.innerHTML='<div class="w-done"><span class="pick-mini" aria-hidden="true"></span><h3>'+T("Merci, votre demande est partie.","Thank you, your request has been sent.")+'</h3><p>'+T("Carl vous rappelle très vite pour en parler.","Carl will call you back very soon to talk it through.")+'</p></div>'})
         .catch(mailto).then(function(){send.disabled=false});
     });
     show(0,false);
@@ -535,5 +545,46 @@
   /* Photos cliquables au clavier */
   $$(".ph-v").forEach(function(el){el.addEventListener("keydown",function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault();var t=el.dataset.video?el:$("img.on[data-video]",el);if(t)t.click()}})});
 
+
+  /* ---------- Miniatures YouTube : image de secours si la grande miniature n'existe pas ---------- */
+  $$("img[data-fb]").forEach(function(im){
+    function chk(){if(im.naturalWidth&&im.naturalWidth<=120){im.src=im.dataset.fb;im.removeAttribute("data-fb")}}
+    im.addEventListener("error",function(){if(im.dataset.fb){im.src=im.dataset.fb;im.removeAttribute("data-fb")}});
+    im.addEventListener("load",chk);if(im.complete)chk();
+  });
+
+  /* ---------- Avis : l'avis mis en avant change à chaque visite ---------- */
+  $$("[data-rotate]").forEach(function(q){
+    var sec=q.closest("section"),cards=sec?$$(".rv-track li",sec):[];if(!cards.length)return;
+    var pool=cards.filter(function(c){return c.classList.contains("hot")});if(!pool.length)pool=cards;
+    var c=pool[Math.floor(Math.random()*pool.length)],p=$("p",c),f=$("footer",c),st=$(".stars",c),b=$("b",f);
+    if(!p||!f||!b)return;
+    var ctx=f.textContent.replace(b.textContent,"").trim();
+    q.innerHTML="<p>"+p.innerHTML+"</p><footer>"+(st?st.outerHTML:"")+"<br><b>"+b.innerHTML+"</b>"+(ctx?", "+ctx.charAt(0).toLowerCase()+ctx.slice(1):"")+"</footer>";
+    c.hidden=true;
+  });
+
+  /* ---------- Médiator : on peut aussi le faire bouger au doigt ---------- */
+  var pst=$(".pick-stage");
+  if(pick&&pst&&!reduce){
+    var tilt=function(e){var r=pick.getBoundingClientRect(),x=(e.clientX-(r.left+r.width/2))/r.width,y=(e.clientY-(r.top+r.height/2))/r.height;
+      pick.style.setProperty("--mx",clamp(x*70,-45,45).toFixed(2)+"deg");pick.style.setProperty("--my",clamp(-y*55,-35,35).toFixed(2)+"deg")};
+    pst.addEventListener("pointerdown",function(e){if(e.pointerType!=="mouse"){tilt(e)}});
+    pst.addEventListener("pointermove",function(e){if(e.pointerType!=="mouse")tilt(e)},{passive:true});
+    pst.addEventListener("pointerup",function(e){if(e.pointerType==="mouse")return;pick.classList.remove("spin");void pick.offsetWidth;pick.classList.add("spin");
+      setTimeout(function(){pick.style.setProperty("--mx","0deg");pick.style.setProperty("--my","0deg")},900)});
+    pst.addEventListener("click",function(){pick.classList.remove("spin");void pick.offsetWidth;pick.classList.add("spin")});
+  }
+
+  /* ---------- « Une question ? » : le médiator de Carl ---------- */
+  var cp=$(".callpick");
+  if(cp&&!$("#wizard")&&store("jb-cp")!=="x"){
+    var cpo=$(".cp-open",cp),cpc=$(".cp-card",cp),shown=false;
+    function showCp(){if(shown)return;shown=true;cp.hidden=false;requestAnimationFrame(function(){cp.classList.add("on")})}
+    setTimeout(showCp,14000);
+    window.addEventListener("scroll",function(){if(window.scrollY>window.innerHeight*1.4)showCp()},{passive:true});
+    cpo.addEventListener("click",function(){var o=cpc.hidden;cpc.hidden=!o;cpo.setAttribute("aria-expanded",o);cp.classList.toggle("open",o)});
+    $(".cp-x",cp).addEventListener("click",function(){cp.classList.remove("on");store("jb-cp","x");setTimeout(function(){cp.hidden=true},400)});
+  }
   var y=$("#year");if(y)y.textContent=new Date().getFullYear();
 })();

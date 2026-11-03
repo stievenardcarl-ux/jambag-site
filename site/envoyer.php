@@ -34,7 +34,11 @@ if (preg_match('/^(\d{4})-/', champ('date'), $mm) && (int)$mm[1] < (int)date('Y'
 if (champ('nom') !== '' && champ('nom') === champ('tel')) { $suspect = true; }
 
 $nom = ligne(champ('nom')); $email = ligne(champ('email'));
-if ($nom === '' || !filter_var($email, FILTER_VALIDATE_EMAIL)) { http_response_code(422); echo json_encode(array('ok'=>false)); exit; }
+$partiel = champ('partial', 2) === '1';   // demande commencée mais pas envoyée
+$emailOk = (bool)filter_var($email, FILTER_VALIDATE_EMAIL);
+if ($partiel) {
+  if (!$emailOk && preg_match_all('/\d/', champ('tel')) < 6) { echo json_encode(array('ok'=>true)); exit; }
+} elseif ($nom === '' || !$emailOk) { http_response_code(422); echo json_encode(array('ok'=>false)); exit; }
 
 $date = champ('date');
 if (preg_match('/^(\d{4})-(\d{2})-(\d{2})$/', $date, $m)) { $date = $m[3].'/'.$m[2].'/'.$m[1]; }
@@ -50,20 +54,22 @@ $infos = array(
   'Durée souhaitée' => ligne(champ('duree')),
   'Technique sur place' => ligne(champ('technique')),
   'Budget envisagé' => ligne(champ('budget')),
+  'Chansons ou artistes' => ligne(champ('chansons')),
   'Nom' => $nom,
   'Société' => ligne(champ('societe')),
   'E-mail' => $email,
   'Téléphone' => ligne(champ('tel')),
 );
-$corps = "Nouvelle demande reçue depuis jambag.fr\n\n";
+$corps = $partiel ? "Demande commencée sur jambag.fr mais pas envoyée jusqu'au bout. Un appel peut la débloquer.\n\n" : "Nouvelle demande reçue depuis jambag.fr\n\n";
+if (champ('langue', 5) === 'en') { $corps .= "Langue : anglais\n"; }
 foreach ($infos as $k => $v) { if ($v !== '') { $corps .= $k.' : '.$v."\n"; } }
 $msg = champ('message', 5000);
 if ($msg !== '') { $corps .= "\nLe projet en quelques mots :\n".$msg."\n"; }
 $corps .= "\nPour répondre, il suffit de répondre à cet e-mail.\n";
 
-$sujet = ($suspect ? '[Spam probable] ' : '').'Demande JamBag : '.ligne(champ('type')).' ('.$nom.')';
+$sujet = ($suspect ? '[Spam probable] ' : '').($partiel ? '[Demande incomplète] ' : '').'Demande JamBag : '.ligne(champ('type')).' ('.$nom.')';
 $h  = 'From: JamBag <'.$FROM.">\r\n";
-$h .= 'Reply-To: '.$email."\r\n";
+if ($emailOk) { $h .= 'Reply-To: '.$email."\r\n"; }
 $h .= "MIME-Version: 1.0\r\nContent-Type: text/plain; charset=UTF-8\r\nContent-Transfer-Encoding: 8bit\r\n";
 $ok = mail($DEST, '=?UTF-8?B?'.base64_encode($sujet).'?=', $corps, $h);
 if (!$ok) { http_response_code(500); }

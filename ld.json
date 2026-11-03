@@ -4,7 +4,7 @@
   "@type": "MusicGroup",
   "name": "JamBag",
   "slogan": "Timeless hits",
-  "description": "Groupe pop-rock live basé à Lille. Reprises pop, rock et variété en solo, duo, trio, quartet ou grande formation, pour mariages, soirées privées et événements d'entreprise.",
+  "description": "Groupe pop-rock live basé à Lille. Reprises pop, rock et variété en solo, duo, trio ou quartet, pour mariages, soirées privées et événements d'entreprise.",
   "url": "https://jambag.fr/",
   "genre": [
    "Pop",
@@ -68,6 +68,14 @@
   "mainEntity": [
    {
     "@type": "Question",
+    "name": "Combien coûte JamBag ?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Pour deux heures de live, sono incluse : à partir de 1 600 € TTC en solo, 2 400 € en duo, 3 500 € en trio et 5 300 € en quartet, avec ingénieur du son. Le déplacement est inclus dans la métropole lilloise. Chaque événement est unique : votre devis est établi sur mesure."
+    }
+   },
+   {
+    "@type": "Question",
     "name": "Où se produit JamBag ?",
     "acceptedAnswer": {
      "@type": "Answer",
@@ -79,7 +87,7 @@
     "name": "Quelle est la formule de base ?",
     "acceptedAnswer": {
      "@type": "Answer",
-     "text": "Le quartet : chant et guitare acoustique, guitare électrique, basse et batterie. C'est le cœur du groupe. Le trio, le duo et le solo en sont des versions plus intimes, et une grande formation existe pour les grandes scènes."
+     "text": "Le quartet : chant et guitare acoustique, guitare électrique, basse et batterie. C'est le cœur du groupe. Selon votre événement, nous jouons aussi en trio, en duo ou en solo, et le quartet s'agrandit pour les grandes scènes."
     }
    },
    {
@@ -111,7 +119,7 @@
     "name": "Peut-on personnaliser la setlist ?",
     "acceptedAnswer": {
      "@type": "Answer",
-     "text": "Oui. Le show est prêt à l'emploi, pensé pour que la soirée ne retombe jamais, et vous pouvez remplacer jusqu'à trois titres ou demander une chanson spéciale. Les cérémonies sont entièrement personnalisables, et un show entièrement sur mesure reste possible."
+     "text": "Oui. Le show est prêt à l'emploi, pensé pour que la soirée ne retombe jamais, et vous pouvez nous proposer jusqu'à cinq titres. Pour un morceau qui demande une répétition particulière, ou au-delà, nous l'étudions ensemble sur devis. Et quand l'ambiance s'y prête, nous jouons aussi les demandes sur le moment."
     }
    },
    {
@@ -119,7 +127,7 @@
     "name": "Combien de temps dure le concert ?",
     "acceptedAnswer": {
      "@type": "Answer",
-     "text": "Nos prestations sont prévues pour deux heures de live. Nous arrivons en moyenne trois heures avant pour l'installation et les balances, parfois une heure suffit quand la technique est déjà en place. Pour les soirées prolongées, le show peut aller jusqu'à quatre heures."
+     "text": "Nos formules sont prévues pour deux heures de live : la bonne durée pour garder l'intensité du premier au dernier titre. Un format d'une heure et demie est possible, et le concert peut aller jusqu'à trois heures, l'heure supplémentaire étant facturée en plus. Nous arrivons en moyenne trois heures avant pour l'installation et les balances, parfois une heure suffit quand la technique est déjà en place."
     }
    }
   ]
@@ -166,7 +174,7 @@
    }
   ],
   "url": "https://jambag.fr/mariages.html",
-  "description": "Musique live pour la cérémonie, le vin d'honneur et la soirée dansante, en solo, duo, trio, quartet ou grande formation."
+  "description": "Musique live pour la cérémonie, le vin d'honneur et la soirée dansante, en solo, duo, trio ou quartet."
  },
  "service_entreprise": {
   "@context": "https://schema.org",
@@ -210,7 +218,7 @@
     "name": "Pouvez-vous jouer notre chanson pour l'entrée ou la première danse ?",
     "acceptedAnswer": {
      "@type": "Answer",
-     "text": "Bien sûr. Les cérémonies sont entièrement personnalisables, et pour la soirée, vous pouvez remplacer jusqu'à trois titres ou demander une chanson spéciale que nous apprenons pour vous."
+     "text": "Bien sûr. Les cérémonies sont entièrement personnalisables, et pour la soirée, vous pouvez nous proposer jusqu'à cinq titres ou une chanson spéciale que nous apprenons pour vous."
     }
    },
    {
