@@ -1,0 +1,250 @@
+{
+ "group": {
+  "@context": "https://schema.org",
+  "@type": "MusicGroup",
+  "name": "JamBag",
+  "slogan": "Timeless hits",
+  "description": "Groupe pop-rock live basé à Lille. Reprises pop, rock et variété en solo, duo, trio, quartet ou grande formation, pour mariages, soirées privées et événements d'entreprise.",
+  "url": "https://jambag.fr/",
+  "genre": [
+   "Pop",
+   "Rock",
+   "Variété française"
+  ],
+  "email": "hello@jambag.fr",
+  "telephone": "+33661579154",
+  "foundingLocation": {
+   "@type": "Place",
+   "name": "Lille, France"
+  },
+  "areaServed": [
+   "Lille",
+   "Hauts-de-France",
+   "Paris",
+   "Belgique",
+   "Côte d'Opale",
+   "France"
+  ],
+  "member": [
+   {
+    "@type": "Person",
+    "name": "Carl",
+    "roleName": "Chant, guitare acoustique"
+   },
+   {
+    "@type": "Person",
+    "name": "Quentin",
+    "roleName": "Guitare électrique, chant"
+   },
+   {
+    "@type": "Person",
+    "name": "Simon",
+    "roleName": "Basse"
+   },
+   {
+    "@type": "Person",
+    "name": "Stanley",
+    "roleName": "Batterie"
+   }
+  ],
+  "sameAs": [
+   "https://www.instagram.com/jambagmusic/",
+   "https://www.youtube.com/watch?v=ZVjaWwipf4Q"
+  ],
+  "@id": "https://jambag.fr/#groupe",
+  "logo": "https://jambag.fr/img/jambag-logo-brun.png",
+  "image": "https://jambag.fr/img/jambag-partage.jpg",
+  "address": {
+   "@type": "PostalAddress",
+   "addressLocality": "Mouvaux",
+   "postalCode": "59420",
+   "addressRegion": "Hauts-de-France",
+   "addressCountry": "FR"
+  }
+ },
+ "faq": {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+   {
+    "@type": "Question",
+    "name": "Où se produit JamBag ?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Nous sommes basés à Lille et nous jouons partout : Hauts-de-France, Paris, Belgique, Côte d'Opale, France entière et international. Les frais de déplacement sont précisés dans le devis."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Quelle est la formule de base ?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Le quartet : chant et guitare acoustique, guitare électrique, basse et batterie. C'est le cœur du groupe. Le trio, le duo et le solo en sont des versions plus intimes, et une grande formation existe pour les grandes scènes."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Qui sera sur scène le jour J ?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Le quartet, mené par Carl. Chaque musicien a un remplaçant attitré dans la famille JamBag. Si la voix principale devait changer, nous vous la présentons et la validons avec vous avant l'événement."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Et si un musicien tombe malade ?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Le concert a lieu, quoi qu'il arrive. Chaque musicien a son remplaçant attitré dans la famille JamBag : nous gérons le remplacement et nous vous prévenons toujours. Si un concert ne pouvait pas avoir lieu de notre fait, il serait intégralement remboursé. Ce n'est jamais arrivé."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Faut-il prévoir la technique ?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Le plus simple : le prestataire son et lumière de votre lieu ou de votre agence installe selon notre fiche technique. Sinon, nous faisons venir notre partenaire technique, ou nous venons en autonomie pour les formats plus légers. Tout est précisé dans le devis."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Peut-on personnaliser la setlist ?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Oui. Le show est prêt à l'emploi, pensé pour que la soirée ne retombe jamais, et vous pouvez remplacer jusqu'à trois titres ou demander une chanson spéciale. Les cérémonies sont entièrement personnalisables, et un show entièrement sur mesure reste possible."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Combien de temps dure le concert ?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Nos prestations sont prévues pour deux heures de live. Nous arrivons en moyenne trois heures avant pour l'installation et les balances, parfois une heure suffit quand la technique est déjà en place. Pour les soirées prolongées, le show peut aller jusqu'à quatre heures."
+    }
+   }
+  ]
+ },
+ "website": {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://jambag.fr/#site",
+  "url": "https://jambag.fr/",
+  "name": "JamBag",
+  "inLanguage": "fr-FR",
+  "publisher": {
+   "@id": "https://jambag.fr/#groupe"
+  }
+ },
+ "service_mariage": {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Groupe de musique live pour mariage",
+  "serviceType": "Animation musicale de mariage",
+  "provider": {
+   "@id": "https://jambag.fr/#groupe"
+  },
+  "areaServed": [
+   {
+    "@type": "City",
+    "name": "Lille"
+   },
+   {
+    "@type": "AdministrativeArea",
+    "name": "Hauts-de-France"
+   },
+   {
+    "@type": "City",
+    "name": "Paris"
+   },
+   {
+    "@type": "Country",
+    "name": "Belgique"
+   },
+   {
+    "@type": "Country",
+    "name": "France"
+   }
+  ],
+  "url": "https://jambag.fr/mariages.html",
+  "description": "Musique live pour la cérémonie, le vin d'honneur et la soirée dansante, en solo, duo, trio, quartet ou grande formation."
+ },
+ "service_entreprise": {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Groupe live pour événement d'entreprise",
+  "serviceType": "Animation musicale d'événement d'entreprise",
+  "provider": {
+   "@id": "https://jambag.fr/#groupe"
+  },
+  "areaServed": [
+   {
+    "@type": "City",
+    "name": "Lille"
+   },
+   {
+    "@type": "AdministrativeArea",
+    "name": "Hauts-de-France"
+   },
+   {
+    "@type": "City",
+    "name": "Paris"
+   },
+   {
+    "@type": "Country",
+    "name": "Belgique"
+   },
+   {
+    "@type": "Country",
+    "name": "France"
+   }
+  ],
+  "url": "https://jambag.fr/entreprises.html",
+  "description": "Show pop-rock, jam d'entreprise et blind test live pour soirées d'entreprise, séminaires et congrès."
+ },
+ "faq_mariage": {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+   {
+    "@type": "Question",
+    "name": "Pouvez-vous jouer notre chanson pour l'entrée ou la première danse ?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Bien sûr. Les cérémonies sont entièrement personnalisables, et pour la soirée, vous pouvez remplacer jusqu'à trois titres ou demander une chanson spéciale que nous apprenons pour vous."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Jouez-vous pendant le dîner ?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Nous intervenons sur la cérémonie, le vin d'honneur et la soirée dansante. Pendant le dîner, une playlist ou notre DJ partenaire prend le relais."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Faut-il prévoir de la place et de l'électricité ?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Un espace dédié au groupe et une alimentation électrique à proximité. Notre fiche technique précise tout, et nous nous adaptons à votre lieu."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Et si un musicien tombe malade ?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Le concert a lieu, quoi qu'il arrive. Chaque musicien a son remplaçant attitré dans la famille JamBag : nous gérons le remplacement et nous vous prévenons toujours. Si un concert ne pouvait pas avoir lieu de notre fait, il serait intégralement remboursé. Ce n'est jamais arrivé."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Venez-vous loin de Lille ?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Partout en France et à l'étranger. Les frais de déplacement sont indiqués clairement dans le devis."
+    }
+   }
+  ]
+ }
+}

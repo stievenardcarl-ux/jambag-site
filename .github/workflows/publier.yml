@@ -1,0 +1,36 @@
+# Construit le site et le publie sur la branche "deploy", que OVH met en ligne.
+# Tourne à chaque modification, et chaque matin pour sortir les articles programmés.
+name: Publier le site
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: "15 5 * * *"   # tous les jours vers 6 h 15 (heure de Paris en hiver)
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: publier
+  cancel-in-progress: false
+jobs:
+  publier:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install pillow==12.0.0
+      - name: Construire le site
+        run: python build_blog.py
+      - name: Publier sur la branche deploy
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./site
+          publish_branch: deploy
+          keep_files: false
+          force_orphan: false
+          user_name: "JamBag bot"
+          user_email: "github-actions[bot]@users.noreply.github.com"
+          commit_message: "Mise en ligne"
