@@ -1077,3 +1077,8 @@ section{position:relative}
 .devis-side .cc-s{font-size:.92rem;line-height:1.45}
 .devis-side .pm-h{font-size:1rem}
 .devis-side .price-mini li{font-size:.92rem}
+.cp-pick,.cc-ph{-webkit-mask:none;mask:none;background:none}
+.cp-pick{width:3.8rem;filter:drop-shadow(0 8px 16px rgba(60,20,5,.35))}
+.cc-ph{filter:drop-shadow(0 6px 14px rgba(0,0,0,.3))}
+.cp-pick img,.cc-ph img{object-fit:contain}
+@media (max-width:700px){.cp-pick{width:3.3rem}}

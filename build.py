@@ -17,7 +17,7 @@ ARROW='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 
 NAV=[("formules.html","Formules"),("mariages.html","Mariages"),("entreprises.html","Entreprises"),("videos.html","Vidéos"),("repertoire.html","Répertoire"),("groupe.html","Le groupe"),("blog/","Blog")]
 TEL='<a href="tel:+33661579154">06 61 57 91 54</a>'
 CALL_PICK=lambda: f'''<aside class="callpick" aria-label="Appeler Carl" hidden>
-  <button class="cp-open" type="button" aria-expanded="false" aria-controls="cp-card"><span class="cp-pick"><img {img_attr("carl-call")} alt="" loading="lazy"></span><span class="cp-l">Une question ?</span></button>
+  <button class="cp-open" type="button" aria-expanded="false" aria-controls="cp-card"><span class="cp-pick"><img {img_attr("carl-call.png")} alt="" loading="lazy"></span><span class="cp-l">Une question ?</span></button>
   <div class="cp-card" id="cp-card" hidden>
     <button class="cp-x" type="button" aria-label="Fermer">×</button>
     <p class="cp-h">Une question ?<br><b>Carl vous répond.</b></p>
