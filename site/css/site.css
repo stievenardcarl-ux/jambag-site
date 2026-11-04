@@ -1146,3 +1146,10 @@ section{position:relative}
 .wm-big em{font-style:italic;color:var(--ember)}
 .wm-body{margin:2rem auto 0;max-width:58ch;font-weight:300;font-size:1.08rem;line-height:1.75;opacity:.85}
 .wed-mani+.wed-all{padding-top:clamp(3rem,6vw,5rem)}
+.brand{flex:none;display:flex;align-items:center}
+.brand img{max-width:none}
+@media (max-width:420px){.bar{gap:.6rem}.bar-right{gap:.35rem}.bar-right .btn{padding:.45rem .85rem;font-size:.84rem}.bar-right .lang{font-size:.8rem}}
+.cta-band .btn,.wed-cta .btn,.big-scene .btn{margin:.35rem .25rem}
+.vpage{padding-top:clamp(7.5rem,14vw,11rem)}
+@media (max-width:420px){.brand img{height:.95rem}}
+@media (max-width:360px){.bar-right .lang{display:none}}
