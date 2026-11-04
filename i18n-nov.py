@@ -264,4 +264,5 @@ NOV = {
 "tout le monde chantait": "everyone was singing",
 "La musique live n'est pas un décor. C'est elle qui donne le rythme de la journée, qui rassemble les générations et qui transforme un beau mariage en souvenir partagé. Un conseil d'amis : ne la sous-estimez pas dans votre budget, c'est souvent elle qui fait toute la différence.": "Live music isn't background. It sets the pace of the day, brings the generations together and turns a lovely wedding into a shared memory. A friendly tip: don't underestimate it in your budget, it's often what makes all the difference.",
 "Quartet, ou grande formation sur mesure": "Quartet, or a tailor-made full band",
+"@Le quartet JamBag sur scène": "The JamBag quartet on stage",
 }

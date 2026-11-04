@@ -107,7 +107,7 @@ slug="chansons-ceremonie-laique",
 title="Musique de cérémonie : comment choisir des chansons qui vous ressemblent",
 seo="Chansons pour cérémonie laïque : comment bien les choisir | JamBag",
 desc="Entrée, alliances, sortie : comment choisir les chansons de votre cérémonie pour qu'elles vous ressemblent vraiment, et 30 idées testées en live.",
-img="ceremonie-duo", date="2026-11-11", read="7 min",
+img="ceremonie-duo", date="2026-11-08", read="7 min",
 lead="Choisir les chansons de sa cérémonie, c'est choisir les quelques minutes où toute l'assemblée retient son souffle. Avant les listes d'idées, un principe : une belle cérémonie est une cérémonie personnelle.",
 body="""
 <h2>Cherchez la résonance, pas la tendance</h2>
@@ -187,7 +187,7 @@ slug="musique-vin-d-honneur",
 title="La musique du vin d'honneur : notre moment préféré du mariage",
 seo="Musique du vin d'honneur : formule, timing et ambiance | JamBag",
 desc="Formule, placement, happenings et ce fameux final de 30 minutes : comment faire du vin d'honneur le moment le plus chaleureux de votre mariage.",
-img="duo-terrasse", date="2026-11-09", read="7 min",
+img="duo-terrasse", date="2026-11-06", read="7 min",
 lead="Le vin d'honneur, ce sont les retrouvailles : le moment où vos invités peuvent enfin discuter et se détendre après la cérémonie. C'est aussi celui où la musique live a le plus d'impact. Voici comment nous le construisons.",
 body="""
 <h2>D'abord, accompagner les conversations</h2>
@@ -235,7 +235,7 @@ slug="chansons-piste-de-danse",
 title="Remplir la piste de danse : les chansons, l'énergie et les petits secrets",
 seo="Remplir la piste de danse : chansons et conseils | JamBag",
 desc="Les chansons qui font danser, celles qui font chanter, l'ordre qui fait monter une soirée, et le rôle (sous-estimé) du groupe et des mariés. Par un groupe qui a joué plus de 300 concerts.",
-img="pub-2", date="2026-11-07", read="8 min",
+img="pub-2", date="2026-11-04", read="8 min",
 lead="Après plus de 300 concerts, nous avons une idée assez précise de ce qui fait lever une salle. Spoiler : les chansons comptent beaucoup, mais elles ne font pas tout.",
 body="""
 <h2>Ce n'est pas qu'une question de chansons</h2>
@@ -290,7 +290,7 @@ slug="musique-live-soiree-entreprise",
 title="Musique live en entreprise : 6 idées pour faire participer vos équipes",
 seo="Musique live en entreprise : 6 idées pour vos événements | JamBag",
 desc="Jam d'entreprise, blind test live, hymne de l'entreprise, pause acoustique : comment intégrer la musique live à vos événements d'entreprise pour que tout le monde participe.",
-img="jam-1", date="2026-11-05", read="8 min",
+img="jam-1", date="2026-11-04", read="8 min",
 lead="Un événement d'entreprise réussi, ce n'est pas celui où le groupe joue le mieux. C'est celui dont vos équipes parlent encore le lundi matin. Voici six façons d'intégrer la musique live pour que tout le monde y prenne part.",
 body="""
 <p>Et pas seulement le soir : la musique live trouve sa place à tout moment. Notre jam à Gand a commencé à 17 h ; un déjeuner, un afterwork ou la fin d'un séminaire fonctionnent tout aussi bien.</p>
@@ -382,7 +382,7 @@ slug="checklist-evenement-musique-live",
 title="La check-list express avant votre événement avec un groupe live",
 seo="Check-list : accueillir un groupe live à son événement | JamBag",
 desc="Tout ce qu'il faut vérifier avant d'accueillir un groupe live, en une page : lieu, technique, timing, déroulé, accueil.",
-img="trio-salle", date="2026-11-13", read="2 min",
+img="trio-salle", date="2026-11-10", read="2 min",
 lead="Pas le temps de tout lire ? Voici l'essentiel, à cocher avant votre mariage ou votre événement.",
 body="""
 <h2>Le lieu</h2>
@@ -427,7 +427,7 @@ slug="musicien-malade-remplacement",
 title="Et si un musicien tombe malade ? Ce qui se passe vraiment le jour J",
 seo="Musicien malade le jour du mariage : que se passe-t-il ? | JamBag",
 desc="Remplaçants attitrés, ponctualité, remboursement : comment JamBag garantit que votre concert a lieu, quoi qu'il arrive.",
-img="quartet", date="2026-11-15", read="4 min",
+img="quartet", date="2026-11-12", read="4 min",
 lead="C'est une question que beaucoup n'osent pas poser : que se passe-t-il si le chanteur a une extinction de voix la veille du mariage ? Chez nous, la réponse est simple : le concert a lieu.",
 body="""
 <h2>Chaque musicien a son remplaçant attitré</h2>
