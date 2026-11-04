@@ -283,11 +283,14 @@
   /* ---------- Médiator en relief : suit la souris ---------- */
   var pick=$(".pick3d");
   if(pick&&!reduce){
-    window.addEventListener("pointermove",function(e){
-      var r=pick.getBoundingClientRect();if(r.bottom<0||r.top>window.innerHeight)return;
-      var x=(e.clientX-(r.left+r.width/2))/window.innerWidth,y=(e.clientY-(r.top+r.height/2))/window.innerHeight;
-      pick.style.setProperty("--mx",(x*36).toFixed(2)+"deg");pick.style.setProperty("--my",(-y*28).toFixed(2)+"deg");
+    var pst0=pick.closest(".pick-stage")||pick;
+    pst0.addEventListener("pointermove",function(e){
+      if(e.pointerType!=="mouse")return;
+      var r=pick.getBoundingClientRect(),x=(e.clientX-(r.left+r.width/2))/(r.width/2),y=(e.clientY-(r.top+r.height/2))/(r.height/2);
+      pick.classList.add("hov");
+      pick.style.setProperty("--mx",clamp(x*48,-55,55).toFixed(2)+"deg");pick.style.setProperty("--my",clamp(-y*40,-45,45).toFixed(2)+"deg");
     },{passive:true});
+    pst0.addEventListener("pointerleave",function(){pick.classList.remove("hov");pick.style.setProperty("--mx","0deg");pick.style.setProperty("--my","0deg")});
   }
 
   /* ---------- Défilement : parallaxe, collage, révélation du quartet, formules horizontales ---------- */
@@ -578,13 +581,13 @@
 
   /* ---------- « Une question ? » : le médiator de Carl ---------- */
   var cp=$(".callpick");
-  if(cp&&!$("#wizard")&&store("jb-cp")!=="x"){
+  if(cp&&!$("#wizard")){
     var cpo=$(".cp-open",cp),cpc=$(".cp-card",cp),shown=false;
     function showCp(){if(shown)return;shown=true;cp.hidden=false;requestAnimationFrame(function(){cp.classList.add("on")})}
-    setTimeout(showCp,14000);
-    window.addEventListener("scroll",function(){if(window.scrollY>window.innerHeight*1.4)showCp()},{passive:true});
+    setTimeout(showCp,9000);
+    window.addEventListener("scroll",function(){if(window.scrollY>window.innerHeight*.9)showCp()},{passive:true});
     cpo.addEventListener("click",function(){var o=cpc.hidden;cpc.hidden=!o;cpo.setAttribute("aria-expanded",o);cp.classList.toggle("open",o)});
-    $(".cp-x",cp).addEventListener("click",function(){cp.classList.remove("on");store("jb-cp","x");setTimeout(function(){cp.hidden=true},400)});
+    $(".cp-x",cp).addEventListener("click",function(){cp.classList.remove("on");setTimeout(function(){cp.hidden=true},400)});
   }
   var y=$("#year");if(y)y.textContent=new Date().getFullYear();
 })();

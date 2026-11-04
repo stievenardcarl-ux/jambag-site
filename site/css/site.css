@@ -1082,3 +1082,47 @@ section{position:relative}
 .cc-ph{filter:drop-shadow(0 6px 14px rgba(0,0,0,.3))}
 .cp-pick img,.cc-ph img{object-fit:contain}
 @media (max-width:700px){.cp-pick{width:3.3rem}}
+
+.pick3d.hov{transition:transform .12s linear}
+.pick-stage{cursor:pointer}
+
+.price-mini.ent{margin-top:2.6rem;max-width:760px;box-shadow:inset 0 0 0 1px var(--line);background:rgba(255,255,255,.5)}
+.price-mini.ent li{border-bottom-color:var(--line);font-size:1rem;padding:.5rem 0}
+.price-mini.ent .pm-n a{color:inherit}
+
+/* ===== Page mariages : aérienne et douce ===== */
+.wed{--ivory:#FBF7F0;background:var(--ivory)}
+.wed .sec{background:var(--ivory)}
+.wed .wed-intro{padding-bottom:clamp(3rem,6vw,5rem)}
+.wed-k{font-family:var(--display);font-stretch:125%;font-weight:800;text-transform:uppercase;font-size:.8rem;letter-spacing:.08em;color:var(--ember);margin:0 0 1rem}
+.wed .prose p{font-weight:300;font-size:1.08rem;line-height:1.75}
+.wed-duo{display:grid;grid-template-columns:1fr;gap:1rem;margin-top:clamp(2.5rem,6vw,4.5rem)}
+@media (min-width:760px){.wed-duo{grid-template-columns:.9fr 1.1fr .9fr;align-items:center}}
+.wed-duo figure{margin:0;border-radius:200px 200px 24px 24px;overflow:hidden;aspect-ratio:3/4}
+.wed-duo figure:nth-child(2){aspect-ratio:4/5;border-radius:24px}
+@media (min-width:760px){.wed-duo figure:nth-child(1){translate:0 2.5rem}.wed-duo figure:nth-child(3){translate:0 -2rem}}
+.wed-duo img{width:100%;height:100%;object-fit:cover}
+.wed-moments{background:#F6EFE4!important}
+.wm-list{display:grid;gap:clamp(3.5rem,8vw,6.5rem);margin-top:clamp(2.5rem,6vw,4.5rem)}
+.wm{display:grid;gap:clamp(1.6rem,4vw,4.5rem);align-items:center}
+@media (min-width:900px){.wm{grid-template-columns:1fr 1fr}.wm.flip .wm-ph{order:2}}
+.wm-ph{margin:0;border-radius:28px;overflow:hidden;aspect-ratio:5/4}
+.wm-ph img{width:100%;height:100%;object-fit:cover}
+.wm-n{margin:0 0 .6rem;font-family:var(--display);font-stretch:125%;font-weight:900;font-size:.85rem;color:var(--ember)}
+.wm h3{margin:0;font-family:var(--text);font-weight:300;font-size:clamp(2rem,4vw,3rem);line-height:1.05;letter-spacing:-.01em}
+.wm-sub{margin:.5rem 0 1.3rem;font-style:italic;font-weight:300;font-size:1.15rem;opacity:.75}
+.wm-tx>p:not(.wm-n):not(.wm-sub):not(.wm-f){max-width:52ch;font-weight:300;font-size:1.05rem;line-height:1.75}
+.wm-f{margin:1.4rem 0 0;display:inline-block;padding:.5rem 1rem;border-radius:999px;box-shadow:inset 0 0 0 1px var(--line);font-size:.92rem}
+.wed-all{background:var(--ivory)}
+.wed-all .prose p:last-child{margin-top:1.6rem}
+.wed-steps{background:#F6EFE4!important}
+.wed-prices .price-mini.ent{margin-top:0}
+.wed-reviews .rev-card{color:var(--ink);background:#fff}
+.wed-gal{padding-bottom:clamp(4rem,8vw,6rem)}
+.wed-faq{background:#F6EFE4!important}
+.wed-cta{text-align:center}
+.wed-cta .lead{margin-left:auto;margin-right:auto}
+.wed-cta .btn-line{color:var(--ink)}
+.wed-hero .shade{background:linear-gradient(180deg,rgba(34,19,13,.05) 0%,rgba(34,19,13,.15) 45%,rgba(34,19,13,.62) 100%)}
+@media (max-width:759px){.wed-duo{grid-template-columns:repeat(3,1fr);gap:.5rem}.wed-duo figure,.wed-duo figure:nth-child(2){aspect-ratio:3/5;border-radius:90px 90px 14px 14px}.wed-duo figure:nth-child(2){border-radius:14px}.wed-duo figure:nth-child(2){translate:0 1rem}}
+.wed-hero .shade{background:linear-gradient(180deg,rgba(34,19,13,.05) 0%,rgba(34,19,13,.2) 40%,rgba(34,19,13,.7) 100%)}
