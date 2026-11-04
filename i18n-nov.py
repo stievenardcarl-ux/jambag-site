@@ -274,4 +274,9 @@ NOV = {
 "Un concert dans les règles": "A show done by the book",
 "Clarisse, chargée de production JamBag chez Live Tonight": "Clarisse, JamBag's production manager at Live Tonight",
 "@Clarisse, chargée de production JamBag chez Live Tonight": "Clarisse, JamBag's production manager at Live Tonight",
+"Clarisse, chargée de production JamBag chez Live Tonight. Tous nos échanges passent par elle.": "Clarisse, JamBag's production manager at Live Tonight. All our exchanges go through her.",
+"Et c'est gagnant-gagnant : tout est contractualisé, et en cas de pépin, un intermédiaire de confiance protège à la fois le client et le groupe. Un cadre sécurisant pour tout le monde.": "And it's a win-win: everything is under contract, and if anything goes wrong, a trusted intermediary protects both the client and the band. A reassuring framework for everyone.",
+"Tout est contractualisé": "Everything under contract",
+"Client et groupe protégés": "Client and band protected",
+"Des musiciens déclarés et bien payés": "Musicians properly declared and fairly paid",
 }
