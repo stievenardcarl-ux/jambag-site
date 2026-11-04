@@ -102,13 +102,12 @@ def ARTISTS_BLOCK():
 
 def LIVETONIGHT():
     return f"""<aside class="lt" data-reveal aria-labelledby="lt-t">
-  <div class="lt-ph"><img {img_attr("clarisse-livetonight")} alt="Clarisse, chargée de production JamBag chez Live Tonight" loading="lazy"><span class="lt-cap">Clarisse, chargée de production JamBag chez Live Tonight. Tous nos échanges passent par elle.</span></div>
+  <div class="lt-ph"><img {img_attr("clarisse-livetonight")} alt="Clarisse, chargée de production JamBag chez Live Tonight" loading="lazy"><span class="lt-cap">Clarisse, chargée de production JamBag chez Live Tonight</span></div>
   <div class="lt-tx">
     <p class="lt-k">Notre producteur</p>
     <h3 class="lt-h" id="lt-t">Live Tonight, en coulisses</h3>
-    <p>En France, un musicien intermittent doit être salarié par une société de production pour chaque concert. Pour JamBag, ce rôle est tenu par Live Tonight.</p>
-    <p>Même quand vous nous réservez en direct, votre date passe par eux : fiches de paie, déclarations et cadre légal du spectacle. Leur commission, d'environ 10 %, finance ce travail. Elle est déjà comprise dans nos prix : les tarifs annoncés l'incluent.</p>
-    <p>Et c'est gagnant-gagnant : tout est contractualisé, et en cas de pépin, un intermédiaire de confiance protège à la fois le client et le groupe. Un cadre sécurisant pour tout le monde.</p>
+    <p>En France, un musicien intermittent doit être salarié par une société de production. Pour JamBag, c'est Live Tonight : même si vous nous réservez en direct, c'est avec Clarisse que se règlent la facturation et le paiement.</p>
+    <p>Leur commission, d'environ 10 %, est déjà comprise dans nos prix. Pour tout le reste, Carl reste votre référent, du premier appel au jour J.</p>
     <ul class="lt-l"><li>Tout est contractualisé</li><li>Client et groupe protégés</li><li>Des musiciens déclarés et bien payés</li></ul>
   </div>
 </aside>"""

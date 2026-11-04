@@ -279,4 +279,8 @@ NOV = {
 "Tout est contractualisé": "Everything under contract",
 "Client et groupe protégés": "Client and band protected",
 "Des musiciens déclarés et bien payés": "Musicians properly declared and fairly paid",
+"Clarisse, chargée de production JamBag chez Live Tonight": "Clarisse, JamBag's production manager at Live Tonight",
+"@Clarisse, chargée de production JamBag chez Live Tonight": "Clarisse, JamBag's production manager at Live Tonight",
+"En France, un musicien intermittent doit être salarié par une société de production. Pour JamBag, c'est Live Tonight : même si vous nous réservez en direct, c'est avec Clarisse que se règlent la facturation et le paiement.": "In France, a freelance performing musician must be employed by a production company. For JamBag, that's Live Tonight: even when you book us directly, invoicing and payment are handled with Clarisse.",
+"Leur commission, d'environ 10 %, est déjà comprise dans nos prix. Pour tout le reste, Carl reste votre référent, du premier appel au jour J.": "Their commission, around 10%, is already included in our prices. For everything else, Carl remains your point of contact, from the first call to the big day.",
 }
