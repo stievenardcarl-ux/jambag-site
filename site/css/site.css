@@ -1153,3 +1153,7 @@ section{position:relative}
 .vpage{padding-top:clamp(7.5rem,14vw,11rem)}
 @media (max-width:420px){.brand img{height:.95rem}}
 @media (max-width:360px){.bar-right .lang{display:none}}
+
+@media (min-width:900px){.devis .contact-grid{grid-template-columns:1.35fr .75fr}}
+.devis-side{position:sticky;top:6rem}
+@media (max-width:899px){.devis-side{position:static}}
