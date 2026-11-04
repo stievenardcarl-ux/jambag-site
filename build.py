@@ -28,6 +28,11 @@ CALL_PICK=lambda: f'''<aside class="callpick" aria-label="Appeler Carl" hidden>
 </aside>'''
 
 
+import hashlib
+def ver(rel):
+    try: return hashlib.md5(open(f"{SITE}/{rel}","rb").read()).hexdigest()[:8]
+    except OSError: return "1"
+
 def head(title, desc, canon, extra="", og="jambag-partage.jpg"):
     url=f"https://jambag.fr/{canon}"
     return f'''<!doctype html>
@@ -57,7 +62,7 @@ def head(title, desc, canon, extra="", og="jambag-partage.jpg"):
 <link rel="apple-touch-icon" href="favicon.png">
 <link rel="preload" href="fonts/archivo.woff" as="font" type="font/woff" crossorigin>
 <link rel="preload" href="fonts/barlow-Light.woff" as="font" type="font/woff" crossorigin>
-<link rel="stylesheet" href="css/site.css">
+<link rel="stylesheet" href="css/site.css?v={ver("css/site.css")}">
 {extra}
 </head>
 <body>
@@ -107,7 +112,7 @@ def footer():
 </footer>
 <div class="vmodal" role="dialog" aria-modal="true" aria-label="Vidéo"><button class="close" type="button" aria-label="Fermer la vidéo">×</button><div class="box"></div><p class="alt">La vidéo ne s'affiche pas ? <a href="#" target="_blank" rel="noopener">Ouvrir sur YouTube</a></p></div>
 {CALL_PICK()}
-<script src="js/site.js" defer></script>
+<script src="js/site.js?v={ver("js/site.js")}" defer></script>
 </body>
 </html>
 '''
