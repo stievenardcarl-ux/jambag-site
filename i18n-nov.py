@@ -268,10 +268,10 @@ NOV = {
 "Notre producteur": "Our producer",
 "Live Tonight, en coulisses": "Live Tonight, behind the scenes",
 "En France, un musicien intermittent doit être salarié par une société de production pour chaque concert. Pour JamBag, ce rôle est tenu par Live Tonight.": "In France, a freelance performing musician must be employed by a production company for every show. For JamBag, that role is played by Live Tonight.",
-"Même quand vous nous réservez en direct, votre date passe par eux : fiches de paie, déclarations et cadre légal du spectacle. Leur commission, d'environ 10 %, finance ce travail.": "Even when you book us directly, your date goes through them: payslips, declarations and the legal framework of the show. Their commission, around 10%, pays for that work.",
+"Même quand vous nous réservez en direct, votre date passe par eux : fiches de paie, déclarations et cadre légal du spectacle. Leur commission, d'environ 10 %, finance ce travail. Elle est déjà comprise dans nos prix : les tarifs annoncés l'incluent.": "Even when you book us directly, your date goes through them: payslips, declarations and the legal framework of the show. Their commission, around 10%, pays for that work. It is already included in our prices: the rates we quote include it.",
 "Des musiciens déclarés": "Properly declared musicians",
 "Un salaire juste": "Fair pay",
 "Un concert dans les règles": "A show done by the book",
-"Clarisse, notre contact chez Live Tonight": "Clarisse, our contact at Live Tonight",
-"@Clarisse, notre contact chez Live Tonight": "Clarisse, our contact at Live Tonight",
+"Clarisse, chargée de production JamBag chez Live Tonight": "Clarisse, JamBag's production manager at Live Tonight",
+"@Clarisse, chargée de production JamBag chez Live Tonight": "Clarisse, JamBag's production manager at Live Tonight",
 }

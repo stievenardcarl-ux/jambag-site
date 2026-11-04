@@ -102,12 +102,12 @@ def ARTISTS_BLOCK():
 
 def LIVETONIGHT():
     return f"""<aside class="lt" data-reveal aria-labelledby="lt-t">
-  <div class="lt-ph"><img {img_attr("clarisse-livetonight")} alt="Clarisse, notre contact chez Live Tonight" loading="lazy"><span class="lt-cap">Clarisse, notre contact chez Live Tonight</span></div>
+  <div class="lt-ph"><img {img_attr("clarisse-livetonight")} alt="Clarisse, chargée de production JamBag chez Live Tonight" loading="lazy"><span class="lt-cap">Clarisse, chargée de production JamBag chez Live Tonight</span></div>
   <div class="lt-tx">
     <p class="lt-k">Notre producteur</p>
     <h3 class="lt-h" id="lt-t">Live Tonight, en coulisses</h3>
     <p>En France, un musicien intermittent doit être salarié par une société de production pour chaque concert. Pour JamBag, ce rôle est tenu par Live Tonight.</p>
-    <p>Même quand vous nous réservez en direct, votre date passe par eux : fiches de paie, déclarations et cadre légal du spectacle. Leur commission, d'environ 10 %, finance ce travail.</p>
+    <p>Même quand vous nous réservez en direct, votre date passe par eux : fiches de paie, déclarations et cadre légal du spectacle. Leur commission, d'environ 10 %, finance ce travail. Elle est déjà comprise dans nos prix : les tarifs annoncés l'incluent.</p>
     <ul class="lt-l"><li>Des musiciens déclarés</li><li>Un salaire juste</li><li>Un concert dans les règles</li></ul>
   </div>
 </aside>"""
