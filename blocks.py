@@ -99,3 +99,15 @@ def ARTISTS_BLOCK():
     for t, names in enumerate(tiers):
         out += f'<p class="lu lu{t+1}" data-reveal style="--d:{t}">' + '<i aria-hidden="true">·</i>'.join(f'<span>{n.replace("&", "&amp;")}</span>' for n in names) + '</p>'
     return out + '<p class="lu-more" data-reveal style="--d:3">et bien d\'autres, des années 70 à aujourd\'hui</p></div>'
+
+def LIVETONIGHT():
+    return f"""<aside class="lt" data-reveal aria-labelledby="lt-t">
+  <div class="lt-ph"><img {img_attr("clarisse-livetonight")} alt="Clarisse, notre contact chez Live Tonight" loading="lazy"><span class="lt-cap">Clarisse, notre contact chez Live Tonight</span></div>
+  <div class="lt-tx">
+    <p class="lt-k">Notre producteur</p>
+    <h3 class="lt-h" id="lt-t">Live Tonight, en coulisses</h3>
+    <p>En France, un musicien intermittent doit être salarié par une société de production pour chaque concert. Pour JamBag, ce rôle est tenu par Live Tonight.</p>
+    <p>Même quand vous nous réservez en direct, votre date passe par eux : fiches de paie, déclarations et cadre légal du spectacle. Leur commission, d'environ 10 %, finance ce travail.</p>
+    <ul class="lt-l"><li>Des musiciens déclarés</li><li>Un salaire juste</li><li>Un concert dans les règles</li></ul>
+  </div>
+</aside>"""

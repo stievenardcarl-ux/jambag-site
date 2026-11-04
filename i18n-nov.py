@@ -265,4 +265,13 @@ NOV = {
 "La musique live n'est pas un décor. C'est elle qui donne le rythme de la journée, qui rassemble les générations et qui transforme un beau mariage en souvenir partagé. Un conseil d'amis : ne la sous-estimez pas dans votre budget, c'est souvent elle qui fait toute la différence.": "Live music isn't background. It sets the pace of the day, brings the generations together and turns a lovely wedding into a shared memory. A friendly tip: don't underestimate it in your budget, it's often what makes all the difference.",
 "Quartet, ou grande formation sur mesure": "Quartet, or a tailor-made full band",
 "@Le quartet JamBag sur scène": "The JamBag quartet on stage",
+"Notre producteur": "Our producer",
+"Live Tonight, en coulisses": "Live Tonight, behind the scenes",
+"En France, un musicien intermittent doit être salarié par une société de production pour chaque concert. Pour JamBag, ce rôle est tenu par Live Tonight.": "In France, a freelance performing musician must be employed by a production company for every show. For JamBag, that role is played by Live Tonight.",
+"Même quand vous nous réservez en direct, votre date passe par eux : fiches de paie, déclarations et cadre légal du spectacle. Leur commission, d'environ 10 %, finance ce travail.": "Even when you book us directly, your date goes through them: payslips, declarations and the legal framework of the show. Their commission, around 10%, pays for that work.",
+"Des musiciens déclarés": "Properly declared musicians",
+"Un salaire juste": "Fair pay",
+"Un concert dans les règles": "A show done by the book",
+"Clarisse, notre contact chez Live Tonight": "Clarisse, our contact at Live Tonight",
+"@Clarisse, notre contact chez Live Tonight": "Clarisse, our contact at Live Tonight",
 }

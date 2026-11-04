@@ -1,5 +1,5 @@
 import os, re, json, shutil
-from blocks import LOGOS, PICK, MOMENTS, TECH, ARTISTS_BLOCK
+from blocks import LOGOS, PICK, MOMENTS, TECH, ARTISTS_BLOCK, LIVETONIGHT
 from PIL import Image
 import os; ROOT=os.path.dirname(os.path.abspath(__file__)); SITE=ROOT+"/site"; PAGES=ROOT+"/pages"
 
@@ -17,7 +17,7 @@ ARROW='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 
 NAV=[("formules.html","Formules"),("mariages.html","Mariages"),("entreprises.html","Entreprises"),("videos.html","Vidéos"),("repertoire.html","Répertoire"),("groupe.html","Le groupe"),("blog/","Blog")]
 TEL='<a href="tel:+33661579154">06 61 57 91 54</a>'
 CALL_PICK=lambda: f'''<aside class="callpick" aria-label="Appeler Carl" hidden>
-  <button class="cp-open" type="button" aria-expanded="false" aria-controls="cp-card"><span class="cp-pick"><img {img_attr("carl-call.png")} alt="" loading="lazy"></span><span class="cp-l">Une question ?</span></button>
+  <button class="cp-open" type="button" aria-expanded="false" aria-controls="cp-card"><span class="cp-pick"><img {img_attr("carl-call-2.png")} alt="" loading="lazy"></span><span class="cp-l">Une question ?</span></button>
   <div class="cp-card" id="cp-card" hidden>
     <button class="cp-x" type="button" aria-label="Fermer">×</button>
     <p class="cp-h">Une question ?<br><b>Carl vous répond.</b></p>
@@ -121,7 +121,7 @@ def render(name, title, desc, canon, cur, extra_head="", og="jambag-partage.jpg"
     body=open(f"{PAGES}/{name}",encoding="utf-8").read()
     body=re.sub(r"\{\{img:([^}]+)\}\}", lambda m: img_attr(m.group(1)), body)
     body=body.replace("{{STARS}}",STARS).replace("{{ARROW}}",ARROW).replace("{{LOCKUP}}",LOCKUP())
-    body=body.replace("{{PICK}}",PICK()).replace("{{LOGOS}}",LOGOS()).replace("{{MOMENTS}}",MOMENTS()).replace("{{TECH}}",TECH()).replace("{{ARTISTS}}",ARTISTS_BLOCK())
+    body=body.replace("{{PICK}}",PICK()).replace("{{LOGOS}}",LOGOS()).replace("{{MOMENTS}}",MOMENTS()).replace("{{TECH}}",TECH()).replace("{{ARTISTS}}",ARTISTS_BLOCK()).replace("{{LT}}",LIVETONIGHT())
     html=head(title,desc,canon,extra_head,og)+header(cur)+body+footer()
     html=html.replace("{{LANGHREF}}","en/"+("" if name in ("index.html","404.html") else name))
     assert "{{" not in html, name
