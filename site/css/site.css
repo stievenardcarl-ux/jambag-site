@@ -1181,3 +1181,14 @@ section{position:relative}
 .lt-l{margin-top:.7rem;gap:.4rem}
 .lt-l li{font-size:.76rem;padding:.25rem .65rem}
 @media (max-width:620px){.lt-ph img{width:72px}.lt-tx p{font-size:.86rem}}
+/* Formules : deux univers (acoustique bleu ciel, groupe orangé, grande formation violet) */
+.univ{--uc:#D4580F;--ub:rgba(247,162,27,.10);position:relative;padding:clamp(1.6rem,4vw,3rem) clamp(1rem,3vw,2.6rem);border-radius:28px;background:var(--ub);margin:0 0 clamp(2rem,5vw,3.4rem)}
+.univ>.fcard+.fcard{margin-top:clamp(2.4rem,6vw,4.2rem)}
+.univ-ac{--uc:#2C7FB0;--ub:rgba(132,196,232,.17)}
+.univ-hd{margin:0 0 clamp(1.6rem,4vw,2.6rem);max-width:60ch}
+.univ-k{display:inline-block;margin:0 0 .6rem;padding:.35rem .95rem;border-radius:999px;background:var(--uc);color:#fff;font-family:var(--display);font-stretch:125%;font-weight:900;font-size:.78rem;letter-spacing:.06em;text-transform:uppercase}
+.univ-t{margin:0;font-size:1.05rem;opacity:.85}
+.univ .price b{color:var(--uc)}
+.univ .fcard .ideal li{color:var(--uc)}
+.fc-badge{display:inline-block;margin:0 0 .7rem;padding:.25rem .75rem;border-radius:999px;box-shadow:inset 0 0 0 1.5px var(--uc);color:var(--uc);font-weight:600;font-size:.82rem;letter-spacing:.04em;text-transform:uppercase}
+#grande-formation{background:linear-gradient(160deg,#2a1745 0%,#1b0f2e 100%)}
