@@ -1,6 +1,8 @@
 NOV = {
-"Format": "Line-up",
-"Acoustique": "Acoustic",
+"Formats": "Line-ups",
+"Acoustiques": "Acoustic",
+"Formats acoustiques": "Acoustic line-ups",
+"Formats groupe": "Band line-ups",
 "Groupe": "Band",
 "Format acoustique": "Acoustic line-ups",
 "Format groupe": "Band line-ups",
