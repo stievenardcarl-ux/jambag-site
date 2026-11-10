@@ -1,4 +1,9 @@
 NOV = {
+"Format": "Line-up",
+"Acoustique": "Acoustic",
+"Groupe": "Band",
+"Format acoustique": "Acoustic line-ups",
+"Format groupe": "Band line-ups",
 "Avant de choisir,": "Before you choose,",
 "Écoutez-nous": "Hear us live",
 "Du solo au quartet, voyez comment chaque formule fait vivre votre journée. Montez le son.": "From solo to quartet, see how each line-up brings your day to life. Turn it up.",

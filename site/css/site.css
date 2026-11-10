@@ -216,14 +216,19 @@ section{position:relative}
 .panel .ideal{display:flex;flex-wrap:wrap;gap:.45rem;margin:0 0 1.5rem;padding:0;list-style:none}
 .panel .ideal li{padding:.35rem .85rem;border-radius:999px;box-shadow:inset 0 0 0 1px currentColor;font-size:.92rem;opacity:.9}
 .panel .badge{display:inline-block;margin-bottom:1rem;padding:.4rem .9rem;border-radius:999px;background:var(--gold);color:var(--ink);font-family:var(--display);font-stretch:125%;font-weight:800;font-size:.8rem;text-transform:uppercase}
-/* Formules de l'accueil : un dégradé continu par univers (groupe orangé, acoustique bleu ciel, grande formation violet), fondu entre les panneaux */
-.p-intro,.p-quartet,.p-trio,.p-duo,.p-solo,.p-big{background:linear-gradient(180deg,var(--ga,var(--g1)) 0%,var(--g1) 14%,var(--g2) 86%,var(--gb,var(--g2)) 100%)}
-.p-intro{--g1:#22130D;--g2:#22130D;--gb:#4C1C0F;color:var(--cream)}
-.p-quartet{--ga:#4C1C0F;--g1:#7A220A;--g2:#B8440C;color:var(--cream)}
-.p-trio{--g1:#B8440C;--g2:#D9600F;--gb:#9A848C;color:var(--cream)}
-.p-duo{--ga:#9A848C;--g1:#2C94DE;--g2:#4FB4F0;color:var(--ink)}
-.p-solo{--g1:#4FB4F0;--g2:#8FD2F7;--gb:#5D6F9A;color:var(--ink)}
-.p-big{--ga:#5D6F9A;--g1:#2A1745;--g2:#1B0F2E;color:var(--cream)}
+/* Formules de l'accueil : du solo à la grande formation. Fonds presque unis par univers, transitions étalées dans les panneaux-titres */
+.p-intro{background:var(--night);color:var(--cream)}
+.p-solo{background:linear-gradient(180deg,#2C94DE,#3AA2E8);color:var(--ink)}
+.p-duo{background:linear-gradient(180deg,#3AA2E8,#4AAEEE);color:var(--ink)}
+.p-trio{background:linear-gradient(180deg,#C24A0D,#B8440C);color:var(--cream)}
+.p-quartet{background:linear-gradient(180deg,#B8440C,#A63B0B);color:var(--cream)}
+.p-big{background:linear-gradient(180deg,#2A1745,#1B0F2E);color:var(--cream)}
+.p-uni{min-height:auto;padding:clamp(4.5rem,12vw,7rem) 0}
+.u-ac{color:var(--cream);background:linear-gradient(180deg,#22130D,#2C94DE);background:linear-gradient(180deg in oklch,#22130D 10%,#2C94DE 90%)}
+.u-grp{color:var(--cream);background:linear-gradient(180deg,#4AAEEE,#C24A0D);background:linear-gradient(180deg in oklch,#4AAEEE 8%,#C24A0D 92%)}
+.p-gap{min-height:7rem;padding:0;background:linear-gradient(180deg,#A63B0B,#2A1745);background:linear-gradient(180deg in oklch,#A63B0B,#2A1745)}
+.uni-t{font-size:clamp(3rem,9vw,7.5rem);line-height:.92}
+.p-uni .lead{margin-top:1.2rem;max-width:34ch}
 .uk{display:inline-block;margin:0 .5rem 1rem 0;padding:.4rem .9rem;border-radius:999px;box-shadow:inset 0 0 0 1.5px currentColor;font-family:var(--display);font-stretch:125%;font-weight:800;font-size:.8rem;letter-spacing:.04em;text-transform:uppercase}
 .hs-progress{display:none}
 @media (min-width:960px){
@@ -234,7 +239,15 @@ section{position:relative}
   .hs.on .hs-sticky{position:sticky;top:0;height:100vh;overflow:hidden}
   .hs.on .hs-track{flex-direction:row;height:100%;will-change:transform}
   .hs.on .panel{flex:none;width:100vw;height:100%;display:flex;align-items:center;padding:5rem 0 4rem}
-  .hs.on .p-intro,.hs.on .p-quartet,.hs.on .p-trio,.hs.on .p-duo,.hs.on .p-solo,.hs.on .p-big{background:linear-gradient(90deg,var(--ga,var(--g1)) 0%,var(--g1) 14%,var(--g2) 86%,var(--gb,var(--g2)) 100%)}
+  .hs.on .p-solo{background:linear-gradient(90deg,#2C94DE,#3AA2E8)}
+  .hs.on .p-duo{background:linear-gradient(90deg,#3AA2E8,#4AAEEE)}
+  .hs.on .p-trio{background:linear-gradient(90deg,#C24A0D,#B8440C)}
+  .hs.on .p-quartet{background:linear-gradient(90deg,#B8440C,#A63B0B)}
+  .hs.on .p-big{background:linear-gradient(90deg,#2A1745,#1B0F2E)}
+  .hs.on .p-uni{width:75vw;padding:5rem 0 4rem}
+  .hs.on .u-ac{background:linear-gradient(90deg,#22130D,#2C94DE);background:linear-gradient(90deg in oklch,#22130D,#2C94DE 85%)}
+  .hs.on .u-grp{background:linear-gradient(90deg,#4AAEEE,#C24A0D);background:linear-gradient(90deg in oklch,#4AAEEE 10%,#C24A0D 90%)}
+  .hs.on .p-gap{width:35vw;min-height:0;padding:0;background:linear-gradient(90deg,#A63B0B,#2A1745);background:linear-gradient(90deg in oklch,#A63B0B,#2A1745)}
   .hs.on .hs-progress{display:block;position:absolute;left:var(--pad);right:var(--pad);bottom:1.8rem;height:2px;background:rgba(246,239,228,.25);z-index:5;mix-blend-mode:difference}
   .hs.on .hs-progress i{display:block;height:100%;width:100%;background:#fff;transform-origin:left;transform:scaleX(var(--p,0))}
 }
