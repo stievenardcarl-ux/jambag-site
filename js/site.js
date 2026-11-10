@@ -307,9 +307,25 @@
     var ok=window.innerWidth>=960&&!reduce;
     hs.classList.toggle("on",ok);hsOn=ok;
     var track=$(".hs-track",hs);
-    if(!ok){hs.style.height="";track.style.transform="";return}
+    if(!ok){hs.style.height="";track.style.transform="";paintHs(track,false);return}
     var dist=track.scrollWidth-window.innerWidth;
     hs.style.height=(dist+window.innerHeight)+"px";hs.dataset.dist=dist;
+    paintHs(track,true);
+  }
+  // Un seul dégradé continu sur toute la piste des formules : chaque panneau donne ses couleurs (data-c="couleur@position;…"), le navigateur fond tout sans aucune coupure.
+  function paintHs(track,horiz){
+    var stops=[],total=horiz?track.scrollWidth:track.scrollHeight;
+    if(!total)return;
+    Array.prototype.forEach.call(track.children,function(el){
+      var c=el.getAttribute("data-c");if(!c)return;
+      var start=horiz?el.offsetLeft:el.offsetTop,size=horiz?el.offsetWidth:el.offsetHeight;
+      c.split(";").forEach(function(s){var a=s.split("@");stops.push(a[0].trim()+" "+(start+parseFloat(a[1])*size).toFixed(0)+"px")});
+    });
+    if(stops.length<2)return;
+    var dir=horiz?"to right":"to bottom",list=stops.join(",");
+    track.style.background="linear-gradient("+dir+","+list+")";
+    track.style.background="linear-gradient("+dir+" in oklab,"+list+")";
+    track.classList.add("painted");
   }
   function prog(el,vh){var r=el.getBoundingClientRect();return clamp(-r.top/Math.max(1,r.height-vh),0,1)}
   function frame(){
