@@ -233,6 +233,8 @@ section{position:relative}
 .p-uni .lead{margin:1.2rem auto 0;max-width:34ch}
 .uni-arrow{width:clamp(1.6rem,3vw,2.4rem);height:auto;margin:0 0 1.4rem;opacity:.8;transform:rotate(90deg)}
 .u-grp{color:var(--ink)}
+.p-gap{display:flex;align-items:center;justify-content:center;color:var(--cream)}
+.p-gap .uni-arrow{margin:0}
 /* Quand le dégradé continu est posé par le script, les panneaux deviennent transparents */
 .hs-track.painted>.panel{background:transparent!important}
 .hs{background:var(--night)}
@@ -257,6 +259,7 @@ section{position:relative}
   .hs.on .uni-in>.uni-arrow{grid-row:1/3}
   .hs.on .uni-in>.uni-t,.hs.on .uni-in>.lead{grid-column:2}
   .hs.on .uni-arrow{transform:none;margin:0;width:2.6rem}
+  .hs.on .p-gap{display:flex}
   .hs.on .p-uni .lead{margin:1.2rem 0 0}
   .hs.on .u-ac{background:linear-gradient(90deg,#22130D,#2C94DE);background:linear-gradient(90deg in oklch,#22130D,#2C94DE 85%)}
   .hs.on .u-grp{background:linear-gradient(90deg,#4AAEEE,#C24A0D);background:linear-gradient(90deg in oklch,#4AAEEE 10%,#C24A0D 90%)}
