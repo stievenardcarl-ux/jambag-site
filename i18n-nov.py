@@ -1,4 +1,8 @@
 NOV = {
+"Avant de choisir,": "Before you choose,",
+"Écoutez-nous": "Hear us live",
+"Du solo au quartet, voyez comment chaque formule fait vivre votre journée. Montez le son.": "From solo to quartet, see how each line-up brings your day to life. Turn it up.",
+"Découvrir toutes les vidéos du groupe": "See all the band's videos",
 "2 h de live, sono et ingénieur du son inclus": "2 hours of live music, sound system and sound engineer included",
 "2 h de live, sono incluse": "2 hours of live music, sound system included",
 ": solo guitare-voix, duo acoustique, trio et quartet pop-rock": ": solo singer-guitarist, acoustic duo, trio and pop-rock quartet",
