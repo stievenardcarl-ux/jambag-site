@@ -59,7 +59,8 @@
           <h3>Les détails</h3><p class="hint">Si vous ne savez pas encore, laissez vide.</p>
           <div class="fields">
             <div class="field"><label for="w-date">Date</label><input id="w-date" type="date" name="date"></div>
-            <div class="field"><label for="w-lieu">Lieu ou ville</label><input id="w-lieu" name="lieu" autocomplete="off"></div>
+            <div class="field"><label for="w-ville">Ville</label><input id="w-ville" name="ville" autocomplete="address-level2"></div>
+            <div class="field"><label for="w-salle">Nom du lieu <span class="opt-l">(facultatif)</span></label><input id="w-salle" name="salle" autocomplete="off" placeholder="Domaine, salle, château…"></div>
             <div class="field"><label for="w-invites">Nombre d'invités</label><input id="w-invites" name="invites" inputmode="numeric" autocomplete="off"></div>
             <div class="field"><label for="w-duree">Durée de musique</label><select id="w-duree" name="duree"><option>Deux heures (notre format)</option><option>Une heure et demie</option><option>Une heure</option><option>Trois heures</option><option>À définir ensemble</option></select></div>
           </div>
@@ -79,11 +80,14 @@
         <div class="w-step">
           <h3>Vous</h3><p class="hint">Pour que Carl puisse vous rappeler.</p>
           <div class="fields">
-            <div class="field"><label for="w-nom">Nom et prénom</label><input id="w-nom" name="nom" autocomplete="name" required></div>
-            <div class="field"><label for="w-soc">Société <span class="opt-l">(facultatif)</span></label><input id="w-soc" name="societe" autocomplete="organization"></div>
+            <div class="field"><label for="w-prenom">Prénom</label><input id="w-prenom" name="prenom" autocomplete="given-name" required></div>
+            <div class="field"><label for="w-nom">Nom</label><input id="w-nom" name="nom" autocomplete="family-name" required></div>
+            <div class="field full" data-for="mariage"><label for="w-conjoint">Et le prénom de votre futur(e) marié(e) ? <span class="opt-l">(facultatif)</span></label><input id="w-conjoint" name="conjoint" autocomplete="off"></div>
+            <div class="field" data-for="entreprise ville"><label for="w-soc">Société ou organisme <span class="opt-l">(facultatif)</span></label><input id="w-soc" name="societe" autocomplete="organization"></div>
             <div class="field"><label for="w-mail">E-mail</label><input id="w-mail" type="email" name="email" autocomplete="email" required></div>
-            <div class="field"><label for="w-tel">Téléphone</label><input id="w-tel" type="tel" name="tel" autocomplete="tel"></div>
-            <div class="field full"><label for="w-msg">Votre projet en quelques mots</label><textarea id="w-msg" name="message" placeholder="L'esprit de la soirée, vos contraintes d'horaires ou de volume, vos questions."></textarea></div>
+            <div class="field"><label for="w-tel">Téléphone</label><input id="w-tel" type="tel" name="tel" autocomplete="tel" required></div>
+            <div class="field full"><label for="w-source">Comment nous avez-vous connus ? <span class="opt-l">(facultatif)</span></label><select id="w-source" name="source"><option value="">Choisir…</option><option>Publicité Instagram ou Facebook</option><option>Instagram</option><option>Recherche Google</option><option>Mariages.net</option><option>Live Tonight</option><option>Recommandation d'un proche</option><option>Un prestataire (lieu, traiteur, wedding planner)</option><option>Nous avons déjà vu JamBag en concert</option><option>Autre</option></select></div>
+            <div class="field full"><label for="w-msg">Racontez-nous votre projet <span class="opt-l">(facultatif)</span></label><textarea id="w-msg" name="message" rows="6" placeholder="Votre histoire, l'ambiance que vous imaginez, les moments qui comptent, vos horaires, vos questions… Écrivez-nous comme vous le feriez dans un message : c'est ce qui nous aide le plus à vous proposer quelque chose qui vous ressemble."></textarea></div>
           </div>
           <p class="w-legal">Vos informations servent uniquement à vous recontacter au sujet de votre événement, y compris si vous n'allez pas jusqu'à l'envoi. Elles ne sont jamais transmises à des tiers.</p>
         </div>
