@@ -23,7 +23,7 @@ if (champ('jb_k', 20) !== 'jb-'.((int)$t0 % 997) || $t < 6000) { echo json_encod
 
 /* Anti-spam 3 : contenu suspect -> la demande arrive quand même, mais marquée [Spam probable] */
 $suspect = false;
-foreach (array('nom','tel','societe','lieu') as $k) {
+foreach (array('prenom','nom','conjoint','tel','societe','ville','salle','lieu') as $k) {
   $v = champ($k);
   if (preg_match('~(https?://|www\.|\.com\b|\.ru\b)~i', $v)) { $suspect = true; }
   if (preg_match('/[\x{0400}-\x{04FF}\x{4E00}-\x{9FFF}]/u', $v)) { $suspect = true; }
@@ -33,7 +33,8 @@ if ($tel !== '' && preg_match_all('/\d/', $tel) < 6) { $suspect = true; }
 if (preg_match('/^(\d{4})-/', champ('date'), $mm) && (int)$mm[1] < (int)date('Y')) { $suspect = true; }
 if (champ('nom') !== '' && champ('nom') === champ('tel')) { $suspect = true; }
 
-$nom = ligne(champ('nom')); $email = ligne(champ('email'));
+$nom = trim(ligne(champ('prenom')).' '.ligne(champ('nom'))); $email = ligne(champ('email'));
+$conjoint = ligne(champ('conjoint'));
 $partiel = champ('partial', 2) === '1';   // demande commencée mais pas envoyée
 $emailOk = (bool)filter_var($email, FILTER_VALIDATE_EMAIL);
 if ($partiel) {
@@ -49,25 +50,28 @@ $infos = array(
   'Ambiance' => ligne(champ('ambiance')),
   'Formule envisagée' => ligne(champ('formule')),
   'Date' => $date,
-  'Lieu' => ligne(champ('lieu')),
+  'Ville' => ligne(champ('ville')),
+  'Lieu' => ligne(champ('salle')) !== '' ? ligne(champ('salle')) : ligne(champ('lieu')),
   "Nombre d'invités" => ligne(champ('invites')),
   'Durée souhaitée' => ligne(champ('duree')),
   'Technique sur place' => ligne(champ('technique')),
   'Budget envisagé' => ligne(champ('budget')),
   'Chansons ou artistes' => ligne(champ('chansons')),
   'Nom' => $nom,
+  'Futur(e) marié(e)' => $conjoint,
   'Société' => ligne(champ('societe')),
   'E-mail' => $email,
   'Téléphone' => ligne(champ('tel')),
+  'Nous a connus par' => ligne(champ('source')),
 );
 $corps = $partiel ? "Demande commencée sur jambag.fr mais pas envoyée jusqu'au bout. Un appel peut la débloquer.\n\n" : "Nouvelle demande reçue depuis jambag.fr\n\n";
 if (champ('langue', 5) === 'en') { $corps .= "Langue : anglais\n"; }
 foreach ($infos as $k => $v) { if ($v !== '') { $corps .= $k.' : '.$v."\n"; } }
 $msg = champ('message', 5000);
-if ($msg !== '') { $corps .= "\nLe projet en quelques mots :\n".$msg."\n"; }
+if ($msg !== '') { $corps .= "\nLeur message :\n".$msg."\n"; }
 $corps .= "\nPour répondre, il suffit de répondre à cet e-mail.\n";
 
-$sujet = ($suspect ? '[Spam probable] ' : '').($partiel ? '[Demande incomplète] ' : '').'Demande JamBag : '.ligne(champ('type')).' ('.$nom.')';
+$sujet = ($suspect ? '[Spam probable] ' : '').($partiel ? '[Demande incomplète] ' : '').'Demande JamBag : '.ligne(champ('type')).' ('.($conjoint !== '' ? ligne(champ('prenom')).' & '.$conjoint.' '.ligne(champ('nom')) : $nom).')'.(ligne(champ('ville')) !== '' ? ' à '.ligne(champ('ville')) : '');
 $h  = 'From: JamBag <'.$FROM.">\r\n";
 if ($emailOk) { $h .= 'Reply-To: '.$email."\r\n"; }
 $h .= "MIME-Version: 1.0\r\nContent-Type: text/plain; charset=UTF-8\r\nContent-Transfer-Encoding: 8bit\r\n";

@@ -106,7 +106,8 @@
           <h3>The details</h3><p class="hint">If you don't know yet, leave it blank.</p>
           <div class="fields">
             <div class="field"><label for="w-date">Date</label><input id="w-date" type="date" name="date"></div>
-            <div class="field"><label for="w-lieu">Venue or town</label><input id="w-lieu" name="lieu" autocomplete="off"></div>
+            <div class="field"><label for="w-ville">City</label><input id="w-ville" name="ville" autocomplete="address-level2"></div>
+            <div class="field"><label for="w-salle">Venue name <span class="opt-l">(optional)</span></label><input id="w-salle" name="salle" autocomplete="off" placeholder="Estate, hall, château…"></div>
             <div class="field"><label for="w-invites">Number of guests</label><input id="w-invites" name="invites" inputmode="numeric" autocomplete="off"></div>
             <div class="field"><label for="w-duree">Length of music</label><select id="w-duree" name="duree"><option>Two hours (our format)</option><option>An hour and a half</option><option>One hour</option><option>Three hours</option><option>To be decided together</option></select></div>
           </div>
@@ -126,11 +127,14 @@
         <div class="w-step">
           <h3>You</h3><p class="hint">So Carl can call you back.</p>
           <div class="fields">
-            <div class="field"><label for="w-nom">Full name</label><input id="w-nom" name="nom" autocomplete="name" required></div>
-            <div class="field"><label for="w-soc">Company <span class="opt-l">(optional)</span></label><input id="w-soc" name="societe" autocomplete="organization"></div>
+            <div class="field"><label for="w-prenom">First name</label><input id="w-prenom" name="prenom" autocomplete="given-name" required></div>
+            <div class="field"><label for="w-nom">Last name</label><input id="w-nom" name="nom" autocomplete="family-name" required></div>
+            <div class="field full" data-for="mariage"><label for="w-conjoint">And your partner's first name? <span class="opt-l">(optional)</span></label><input id="w-conjoint" name="conjoint" autocomplete="off"></div>
+            <div class="field" data-for="entreprise ville"><label for="w-soc">Company or organisation <span class="opt-l">(optional)</span></label><input id="w-soc" name="societe" autocomplete="organization"></div>
             <div class="field"><label for="w-mail">Email</label><input id="w-mail" type="email" name="email" autocomplete="email" required></div>
-            <div class="field"><label for="w-tel">Téléphone</label><input id="w-tel" type="tel" name="tel" autocomplete="tel"></div>
-            <div class="field full"><label for="w-msg">Your project in a few words</label><textarea id="w-msg" name="message" placeholder="The spirit of the event, any timing or volume constraints, your questions."></textarea></div>
+            <div class="field"><label for="w-tel">Téléphone</label><input id="w-tel" type="tel" name="tel" autocomplete="tel" required></div>
+            <div class="field full"><label for="w-source">How did you hear about us? <span class="opt-l">(optional)</span></label><select id="w-source" name="source"><option value="">Choose…</option><option>Instagram or Facebook ad</option><option>Instagram</option><option>Google search</option><option>Mariages.net</option><option>Live Tonight</option><option>Recommended by someone close</option><option>A supplier (venue, caterer, wedding planner)</option><option>We've seen JamBag perform</option><option>Other</option></select></div>
+            <div class="field full"><label for="w-msg">Tell us about your event <span class="opt-l">(optional)</span></label><textarea id="w-msg" name="message" rows="6" placeholder="Your story, the atmosphere you imagine, the moments that matter, your timings, your questions… Write to us as you would in a message: it's what helps us most to suggest something that feels like you."></textarea></div>
           </div>
           <p class="w-legal">Your details are used only to contact you about your event, including if you don't send the form. They are never passed on to third parties.</p>
         </div>
@@ -218,6 +222,6 @@
     <a class="cp-alt" href="devis.html">Or plan your event</a>
   </div>
 </aside>
-<script src="../js/site.js?v=a6ed14e4" defer></script>
+<script src="../js/site.js?v=f229f324" defer></script>
 </body>
 </html>
