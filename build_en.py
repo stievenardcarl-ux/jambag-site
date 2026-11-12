@@ -95,7 +95,7 @@ def tr_text(m):
     lead = raw[:len(raw) - len(raw.lstrip())]; trail = raw[len(raw.rstrip()):]
     return ">" + lead + out + trail + "<"
 
-ATTRS = r'(alt|aria-label|placeholder|title|value|data-chapter|data-label|data-s)'
+ATTRS = r'(alt|aria-label|placeholder|title|value|data-chapter|data-label|data-ph-[a-z]+|data-s)'
 def tr_attr(m):
     k, v = m.group(1), m.group(2)
     if v in D: return f'{k}="{D[v].replace(chr(34), "&quot;")}"'
