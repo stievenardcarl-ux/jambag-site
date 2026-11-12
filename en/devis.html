@@ -25,7 +25,7 @@
 <link rel="apple-touch-icon" href="../favicon.png">
 <link rel="preload" href="../fonts/archivo.woff" as="font" type="font/woff" crossorigin>
 <link rel="preload" href="../fonts/barlow-Light.woff" as="font" type="font/woff" crossorigin>
-<link rel="stylesheet" href="../css/site.css?v=f30e3adf">
+<link rel="stylesheet" href="../css/site.css?v=a0ecd13a">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "MusicGroup", "name": "JamBag", "slogan": "Timeless hits", "description": "Groupe pop-rock live basé à Lille. Reprises pop, rock et variété en solo, duo, trio ou quartet, pour mariages, soirées privées et événements d'entreprise.", "url": "https://jambag.fr/", "genre": ["Pop", "Rock", "French chanson"], "email": "hello@jambag.fr", "telephone": "+33661579154", "foundingLocation": {"@type": "Place", "name": "Lille, France"}, "areaServed": ["Lille", "Hauts-de-France", "Paris", "Belgium", "Opal Coast", "France"], "member": [{"@type": "Person", "name": "Carl", "roleName": "Vocals, acoustic guitar"}, {"@type": "Person", "name": "Quentin", "roleName": "Electric guitar, vocals"}, {"@type": "Person", "name": "Simon", "roleName": "Bass"}, {"@type": "Person", "name": "Stanley", "roleName": "Drums"}], "sameAs": ["https://www.instagram.com/jambagmusic/", "https://www.youtube.com/watch?v=ZVjaWwipf4Q"], "@id": "https://jambag.fr/#groupe", "logo": "https://jambag.fr/img/jambag-logo-brun.png", "image": "https://jambag.fr/img/jambag-partage.jpg", "address": {"@type": "PostalAddress", "addressLocality": "Mouvaux", "postalCode": "59420", "addressRegion": "Hauts-de-France", "addressCountry": "FR"}}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://jambag.fr/en/"}, {"@type": "ListItem", "position": 2, "name": "Request a quote", "item": "https://jambag.fr/en/devis.html"}]}</script>
 </head>
 <body>
@@ -106,8 +106,11 @@
           <h3>The details</h3><p class="hint">If you don't know yet, leave it blank.</p>
           <div class="fields">
             <div class="field"><label for="w-date">Date</label><input id="w-date" type="date" name="date"></div>
-            <div class="field"><label for="w-ville">City</label><input id="w-ville" name="ville" autocomplete="address-level2"></div>
-            <div class="field"><label for="w-salle">Venue name <span class="opt-l">(optional)</span></label><input id="w-salle" name="salle" autocomplete="off" placeholder="Estate, hall, château…"></div>
+            <div class="field"><label for="w-heure">Start time, even roughly</label><input id="w-heure" type="time" name="heure"></div>
+            <div class="field"><label for="w-ville">Event town</label><input id="w-ville" name="ville" autocomplete="off"></div>
+            <div class="field lieu-x"><label for="w-salle">Venue name</label><input id="w-salle" name="salle" autocomplete="off" placeholder="Estate, hall, château…"></div>
+            <div class="field full lieu-x"><label for="w-adresse">Exact venue address</label><input id="w-adresse" name="adresse_lieu" autocomplete="off" placeholder="Number, street, postcode"></div>
+            <div class="field full"><label class="opt opt-line"><input type="checkbox" id="w-sanslieu" name="lieu_inconnu" value="Venue not chosen yet"><span>We don't know the venue yet</span></label></div>
             <div class="field"><label for="w-invites">Number of guests</label><input id="w-invites" name="invites" inputmode="numeric" autocomplete="off"></div>
             <div class="field"><label for="w-duree">Length of music</label><select id="w-duree" name="duree"><option>Two hours (our format)</option><option>An hour and a half</option><option>One hour</option><option>Three hours</option><option>To be decided together</option></select></div>
           </div>
@@ -125,16 +128,20 @@
         </div>
 
         <div class="w-step">
-          <h3>You</h3><p class="hint">So Carl can call you back.</p>
+          <h3>You</h3><p class="hint">So that Carl can call you back and prepare your quote.</p>
           <div class="fields">
             <div class="field"><label for="w-prenom">First name</label><input id="w-prenom" name="prenom" autocomplete="given-name" required></div>
             <div class="field"><label for="w-nom">Last name</label><input id="w-nom" name="nom" autocomplete="family-name" required></div>
             <div class="field full" data-for="mariage"><label for="w-conjoint">And your partner's first name? <span class="opt-l">(optional)</span></label><input id="w-conjoint" name="conjoint" autocomplete="off"></div>
             <div class="field" data-for="entreprise ville"><label for="w-soc">Company or organisation <span class="opt-l">(optional)</span></label><input id="w-soc" name="societe" autocomplete="organization"></div>
+            <div class="field" data-for="entreprise ville"><label for="w-siret">Company registration number <span class="opt-l">(optional)</span></label><input id="w-siret" name="siret" inputmode="numeric" autocomplete="off"></div>
             <div class="field"><label for="w-mail">Email</label><input id="w-mail" type="email" name="email" autocomplete="email" required></div>
             <div class="field"><label for="w-tel">Téléphone</label><input id="w-tel" type="tel" name="tel" autocomplete="tel" required></div>
+            <div class="field full"><label for="w-fact">Billing address</label><input id="w-fact" name="fact_adresse" autocomplete="street-address" placeholder="Number and street" required></div>
+            <div class="field"><label for="w-fact-cp">Postcode</label><input id="w-fact-cp" name="fact_cp" autocomplete="postal-code" inputmode="numeric" required></div>
+            <div class="field"><label for="w-fact-ville">City</label><input id="w-fact-ville" name="fact_ville" autocomplete="address-level2" required></div>
             <div class="field full"><label for="w-source">How did you hear about us? <span class="opt-l">(optional)</span></label><select id="w-source" name="source"><option value="">Choose…</option><option>Instagram or Facebook ad</option><option>Instagram</option><option>Google search</option><option>Mariages.net</option><option>Live Tonight</option><option>Recommended by someone close</option><option>A supplier (venue, caterer, wedding planner)</option><option>We've seen JamBag perform</option><option>Other</option></select></div>
-            <div class="field full"><label for="w-msg">Tell us about your event <span class="opt-l">(optional)</span></label><textarea id="w-msg" name="message" rows="6" placeholder="Your story, the atmosphere you imagine, the moments that matter, your timings, your questions… Write to us as you would in a message: it's what helps us most to suggest something that feels like you."></textarea></div>
+            <div class="field full"><label for="w-msg">Tell us about your event <span class="opt-l">(optional)</span></label><textarea data-ph-mariage="Your day's schedule and timings (ceremony, drinks reception, dinner, party), your guests' ages, the atmosphere you imagine, the song that means something to you both, venue constraints (sound limiter, outdoors, end time)…" data-ph-entreprise="The context (annual party, seminar, gala, launch…), the programme and timings, your guests' profile, when the music should take over, venue or agency constraints…" data-ph-prive="The person being celebrated and what they love, the evening's schedule and timings, the guests' ages, any surprise, venue constraints (neighbours, sound limiter, end time)…" data-ph-ville="The event programme and set time, the stage and equipment available, the expected audience…" id="w-msg" name="message" rows="6" placeholder="Your story, the atmosphere you imagine, the moments that matter, your timings, your questions… Write to us as you would in a message: it's what helps us most to suggest something that feels like you."></textarea></div>
           </div>
           <p class="w-legal">Your details are used only to contact you about your event, including if you don't send the form. They are never passed on to third parties.</p>
         </div>
@@ -222,6 +229,6 @@
     <a class="cp-alt" href="devis.html">Or plan your event</a>
   </div>
 </aside>
-<script src="../js/site.js?v=f229f324" defer></script>
+<script src="../js/site.js?v=1d640eed" defer></script>
 </body>
 </html>

@@ -23,7 +23,7 @@ if (champ('jb_k', 20) !== 'jb-'.((int)$t0 % 997) || $t < 6000) { echo json_encod
 
 /* Anti-spam 3 : contenu suspect -> la demande arrive quand même, mais marquée [Spam probable] */
 $suspect = false;
-foreach (array('prenom','nom','conjoint','tel','societe','ville','salle','lieu') as $k) {
+foreach (array('prenom','nom','conjoint','tel','societe','ville','salle','lieu','adresse_lieu','fact_adresse','fact_cp','fact_ville') as $k) {
   $v = champ($k);
   if (preg_match('~(https?://|www\.|\.com\b|\.ru\b)~i', $v)) { $suspect = true; }
   if (preg_match('/[\x{0400}-\x{04FF}\x{4E00}-\x{9FFF}]/u', $v)) { $suspect = true; }
@@ -50,8 +50,10 @@ $infos = array(
   'Ambiance' => ligne(champ('ambiance')),
   'Formule envisagée' => ligne(champ('formule')),
   'Date' => $date,
+  'Heure' => ligne(champ('heure')),
   'Ville' => ligne(champ('ville')),
-  'Lieu' => ligne(champ('salle')) !== '' ? ligne(champ('salle')) : ligne(champ('lieu')),
+  'Lieu' => champ('lieu_inconnu') !== '' ? 'pas encore choisi' : (ligne(champ('salle')) !== '' ? ligne(champ('salle')) : ligne(champ('lieu'))),
+  'Adresse du lieu' => ligne(champ('adresse_lieu')),
   "Nombre d'invités" => ligne(champ('invites')),
   'Durée souhaitée' => ligne(champ('duree')),
   'Technique sur place' => ligne(champ('technique')),
@@ -60,8 +62,10 @@ $infos = array(
   'Nom' => $nom,
   'Futur(e) marié(e)' => $conjoint,
   'Société' => ligne(champ('societe')),
+  'SIREN/SIRET' => ligne(champ('siret')),
   'E-mail' => $email,
   'Téléphone' => ligne(champ('tel')),
+  'Adresse de facturation' => trim(ligne(champ('fact_adresse')).', '.ligne(champ('fact_cp')).' '.ligne(champ('fact_ville')), ', '),
   'Nous a connus par' => ligne(champ('source')),
 );
 $corps = $partiel ? "Demande commencée sur jambag.fr mais pas envoyée jusqu'au bout. Un appel peut la débloquer.\n\n" : "Nouvelle demande reçue depuis jambag.fr\n\n";

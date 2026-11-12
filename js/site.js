@@ -502,8 +502,10 @@
         var on=!t||l.dataset.for.split(" ").indexOf(t)>-1;l.hidden=!on;
         if(!on){var c=$("input",l);if(c&&(c.type==="checkbox"||c.type==="radio"))c.checked=false}
       });
+      var ta=$("#w-msg",wz);if(ta){if(!ta.dataset.ph0)ta.dataset.ph0=ta.placeholder;ta.placeholder=(t&&ta.getAttribute("data-ph-"+t))||ta.dataset.ph0}
     }
     $$('input[name="type"]',wz).forEach(function(r){r.addEventListener("change",function(){moments(r.dataset.t)})});
+    var sl=$("#w-sanslieu",wz);function lieu(){var x=sl&&sl.checked;$$(".lieu-x",wz).forEach(function(f){f.hidden=x;if(x)$("input",f).value=""})}if(sl){sl.addEventListener("change",lieu);lieu()}
     var pre=$('input[name="type"]:checked',wz);moments(pre?pre.dataset.t:null);
     next.addEventListener("click",function(){if(valid(cur))show(cur+1)});
     back.addEventListener("click",function(){status.textContent="";show(cur-1)});
@@ -522,7 +524,7 @@
     wz.addEventListener("submit",function(ev){
       ev.preventDefault();if(!valid(cur))return;
       var fd=new FormData(wz),lines=[];fd.set("jb_k","jb-"+(jbT0%997));fd.set("jb_t0",String(jbT0));fd.set("jb_t",String(Date.now()-jbT0));
-      var labels={type:"Type d'événement",moments:"Moments",ambiance:"Ambiance",formule:"Formule envisagée",date:"Date",ville:"Ville",salle:"Lieu",invites:"Invités",duree:"Durée souhaitée",technique:"Technique sur place",budget:"Budget envisagé pour la musique",chansons:"Chansons ou artistes",prenom:"Prénom",nom:"Nom",conjoint:"Futur(e) marié(e)",societe:"Société",email:"E-mail",tel:"Téléphone",source:"Nous a connus par",message:"Message"};if(EN)lines.push("Langue : anglais");
+      var labels={type:"Type d'événement",moments:"Moments",ambiance:"Ambiance",formule:"Formule envisagée",date:"Date",heure:"Heure",ville:"Ville",salle:"Lieu",adresse_lieu:"Adresse du lieu",lieu_inconnu:"Lieu",invites:"Invités",duree:"Durée souhaitée",technique:"Technique sur place",budget:"Budget envisagé pour la musique",chansons:"Chansons ou artistes",prenom:"Prénom",nom:"Nom",conjoint:"Futur(e) marié(e)",societe:"Société",siret:"SIREN/SIRET",email:"E-mail",tel:"Téléphone",fact_adresse:"Adresse de facturation",fact_cp:"Code postal",fact_ville:"Ville de facturation",source:"Nous a connus par",message:"Message"};if(EN)lines.push("Langue : anglais");
       Object.keys(labels).forEach(function(k){var v=fd.getAll(k==="moments"?"moments[]":k).join(", ");if(v)lines.push(labels[k]+" : "+v)});
       var subject="Demande JamBag : "+(fd.get("type")||"événement")+(fd.get("date")?" du "+fd.get("date").split("-").reverse().join("/"):"");
       function mailto(){status.textContent=T("L'envoi direct n'a pas abouti : votre messagerie s'ouvre avec la demande déjà rédigée.","Sending failed: your email app is opening with the request already written.");window.location.href="mailto:hello@jambag.fr?subject="+encodeURIComponent(subject)+"&body="+encodeURIComponent(T("Bonjour,","Hello,")+"\n\n"+lines.join("\n"))}
