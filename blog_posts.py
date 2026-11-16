@@ -282,7 +282,7 @@ body="""
 
 <h2>L'ordre compte autant que les titres</h2>
 <p>Une bonne setlist ne se résume pas à une liste de tubes. Elle alterne les époques pour que chaque génération ait son moment, ménage des respirations, et garde le meilleur pour la fin. C'est ce travail de construction qui fait qu'une soirée monte au lieu de s'essouffler.</p>
-<p>Notre <a href="../repertoire.html">setlist signature</a> est pensée exactement comme ça. Si certains titres ne vous plaisent pas, vous pouvez en remplacer jusqu'à trois. Un show entièrement sur mesure et les demandes particulières restent possibles : ils s'ajoutent simplement au devis.</p>
+<p>Notre <a href="../repertoire.html">setlist signature</a> est pensée exactement comme ça. Et elle sert de base : nous la personnalisons avec vous, avec vos titres et vos demandes particulières, que nous prévoyons ensemble dans le devis.</p>
 """),
 
 dict(
