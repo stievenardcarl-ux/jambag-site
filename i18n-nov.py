@@ -1,4 +1,10 @@
 NOV = {
+"Quand Carl peut-il vous appeler ?": "When can Carl call you?",
+"En journée": "During the day",
+"Le midi": "At lunchtime",
+"En soirée, après 18h": "In the evening, after 6pm",
+"Le week-end": "At the weekend",
+"Si JamBag n'est pas disponible à ma date, j'accepte qu'on me recommande d'autres artistes de confiance": "If JamBag isn't available on my date, I'm happy to be recommended other trusted artists",
 "Formats": "Line-ups",
 "Acoustiques": "Acoustic",
 "Formats acoustiques": "Acoustic line-ups",

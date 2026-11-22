@@ -452,6 +452,10 @@ section{position:relative}
 .w-status:empty{display:none}
 .w-done{text-align:center;padding:2rem 0}
 .w-done img{width:6rem;margin:0 auto 1.2rem}
+.w-done .wd-ph{width:6.5rem;margin:0 auto 1.2rem;display:block}
+.wd-act{display:flex;flex-wrap:wrap;gap:.7rem;justify-content:center;margin:1.4rem 0 1rem}
+.wd-s{font-size:.88rem;opacity:.75;max-width:32rem;margin:0 auto}
+.wd-s a{text-decoration:underline}
 .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
 
 /* ---------- Pages intérieures ---------- */
