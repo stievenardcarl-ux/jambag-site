@@ -67,6 +67,8 @@ $infos = array(
   'Téléphone' => ligne(champ('tel')),
   'Adresse de facturation' => trim(ligne(champ('fact_adresse')).', '.ligne(champ('fact_cp')).' '.ligne(champ('fact_ville')), ', '),
   'Nous a connus par' => ligne(champ('source')),
+  'Quand rappeler' => ligne(champ('rappel')),
+  'Recommander d\'autres artistes si indisponible' => champ('recommandation') !== '' ? 'oui' : '',
 );
 $corps = $partiel ? "Demande commencée sur jambag.fr mais pas envoyée jusqu'au bout. Un appel peut la débloquer.\n\n" : "Nouvelle demande reçue depuis jambag.fr\n\n";
 if (champ('langue', 5) === 'en') { $corps .= "Langue : anglais\n"; }
@@ -75,7 +77,7 @@ $msg = champ('message', 5000);
 if ($msg !== '') { $corps .= "\nLeur message :\n".$msg."\n"; }
 $corps .= "\nPour répondre, il suffit de répondre à cet e-mail.\n";
 
-$sujet = ($suspect ? '[Spam probable] ' : '').($partiel ? '[Demande incomplète] ' : '').'Demande JamBag : '.ligne(champ('type')).' ('.($conjoint !== '' ? ligne(champ('prenom')).' & '.$conjoint.' '.ligne(champ('nom')) : $nom).')'.(ligne(champ('ville')) !== '' ? ' à '.ligne(champ('ville')) : '');
+$sujet = ($suspect ? '[Spam probable] ' : '').($partiel ? '[Demande incomplète] ' : '').'Demande JamBag : '.ligne(champ('type')).' ('.($conjoint !== '' ? ligne(champ('prenom')).' & '.$conjoint.' '.ligne(champ('nom')) : $nom).')'.(ligne(champ('ville')) !== '' ? ' à '.ligne(champ('ville')) : '').(ligne(champ('rappel')) !== '' ? ' · rappel : '.(function_exists('mb_strtolower') ? mb_strtolower(ligne(champ('rappel')), 'UTF-8') : strtolower(ligne(champ('rappel')))) : '');
 $h  = 'From: JamBag <'.$FROM.">\r\n";
 if ($emailOk) { $h .= 'Reply-To: '.$email."\r\n"; }
 $h .= "MIME-Version: 1.0\r\nContent-Type: text/plain; charset=UTF-8\r\nContent-Transfer-Encoding: 8bit\r\n";
