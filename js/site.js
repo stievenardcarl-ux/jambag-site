@@ -609,3 +609,6 @@
   }
   var y=$("#year");if(y)y.textContent=new Date().getFullYear();
 })();
+
+/* Formule pré-remplie depuis la page formules (devis.html?formule=Solo) */
+(function(){try{var f=new URLSearchParams(location.search).get("formule"),sel=document.getElementById("w-formule");if(!f||!sel)return;for(var i=0;i<sel.options.length;i++){if(sel.options[i].value.indexOf(f)===0||sel.options[i].text.indexOf(f)===0){sel.selectedIndex=i;break}}}catch(e){}})();

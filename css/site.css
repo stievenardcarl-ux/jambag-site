@@ -174,7 +174,7 @@ button{font:inherit;color:inherit}
 
 /* ---------- Sections communes ---------- */
 section{position:relative}
-.sec{padding:clamp(5rem,12vw,10rem) 0}
+.sec{padding:clamp(3.5rem,7.5vw,6.5rem) 0}
 .sec-tight{padding:clamp(3.5rem,8vw,6rem) 0}
 .night{background:var(--night);color:var(--cream)}
 .night-2{background:var(--night-2);color:var(--cream)}
@@ -459,7 +459,7 @@ section{position:relative}
 .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
 
 /* ---------- Pages intérieures ---------- */
-.page-hero{position:relative;min-height:78vh;display:flex;align-items:flex-end;color:var(--cream);overflow:hidden;background:var(--night)}
+.page-hero{position:relative;min-height:64vh;display:flex;align-items:flex-end;color:var(--cream);overflow:hidden;background:var(--night)}
 .page-hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .page-hero .shade{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(34,19,13,.55) 0%,rgba(34,19,13,0) 30%,rgba(34,19,13,.15) 50%,rgba(34,19,13,.88) 100%)}
 .page-hero .wrap{position:relative;z-index:4;width:100%;padding-top:8rem;padding-bottom:clamp(2.5rem,7vh,5rem)}
@@ -563,7 +563,7 @@ section{position:relative}
 :root{--pick:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 116'%3E%3Cpath d='M50 114C44 114 38 108 30 98C16 80 4 58 2 36C0 16 14 2 50 2C86 2 100 16 98 36C96 58 84 80 70 98C62 108 56 114 50 114Z'/%3E%3C/svg%3E")}
 
 /* Indice de défilement (ouverture) */
-.scroll-cue{position:absolute;left:50%;bottom:1.1rem;z-index:5;width:1px;height:3rem;margin-left:-.5px;background:rgba(246,239,228,.3);overflow:hidden;display:none}
+.scroll-cue{position:absolute;left:50%;bottom:1.1rem;z-index:5;width:1px;height:3rem;margin-left:-.5px;background:rgba(246,239,228,.3);overflow:hidden;display:block}
 .scroll-cue i{position:absolute;left:0;top:0;width:100%;height:40%;background:var(--cream)}
 @media (min-width:900px){.scroll-cue{display:block}}
 @media (prefers-reduced-motion:no-preference){.scroll-cue i{animation:cue 2.2s var(--ease) infinite}}
@@ -1250,9 +1250,11 @@ section{position:relative}
 .fnav{display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem;margin:0 0 clamp(1.6rem,3.5vw,2.4rem)}
 .fnav a{padding:.45rem 1rem;border-radius:999px;box-shadow:inset 0 0 0 1px currentColor;font-size:.92rem;text-decoration:none;color:inherit;opacity:.85;transition:opacity .3s,background .3s}
 .fnav a:hover{opacity:1;background:rgba(212,88,15,.1)}
-.fnext{display:flex;flex-direction:column;align-items:center;gap:.7rem;margin:clamp(.6rem,2vw,1.2rem) auto 0;text-align:center;color:inherit;text-decoration:none;font-weight:600;max-width:34ch}
+.fnext{display:flex;width:44px;margin:.4rem auto 0;text-align:center;color:inherit;text-decoration:none;font-weight:600;max-width:34ch}
 .fnext i{width:44px;height:44px;border-radius:50%;background:var(--ember,#D4580F);position:relative}
 .fnext i::before{content:"";position:absolute;left:50%;top:44%;width:11px;height:11px;border:solid #fff;border-width:0 2.5px 2.5px 0;transform:translate(-50%,-50%) rotate(45deg)}
 @media (prefers-reduced-motion:no-preference){.fnext i{animation:nudge 1.8s ease-in-out infinite}@keyframes nudge{0%,100%{transform:none}50%{transform:translateY(6px)}}}
 #grande-formation{padding-top:clamp(3.5rem,7vw,5.5rem);padding-bottom:clamp(3.5rem,7vw,5.5rem)}
 #grande-formation+.sec{padding-top:clamp(3.5rem,7vw,5.5rem)}
+.fsec{padding-top:clamp(1.8rem,4vw,2.8rem)}
+.fnav{margin-bottom:clamp(1.2rem,3vw,1.8rem)}
