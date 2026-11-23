@@ -348,4 +348,11 @@ NOV = {
 'Bon à savoir': 'Good to know',
 'Et aussi : la grande formation, sur demande, et le bon à savoir': 'And also: the large line-up, on request, and good-to-know details',
 '@Sur cette page': 'On this page',
+"La puissance du solo, avec le côté festif et dynamique d'une percussion. Le cajon apporte du relief sans jamais couvrir les conversations, et suffit à créer l'événement : une belle ambiance, et la fête qui démarre.": 'The power of the solo, with the festive, upbeat feel of percussion. The cajon adds depth without ever drowning out conversation, and is enough to make it an occasion: a great atmosphere, and the party getting started.',
+'Je choisis le solo': "I'll take the solo",
+'Je choisis le duo': "I'll take the duo",
+'Je choisis le trio': "I'll take the trio",
+'Je choisis le quartet': "I'll take the quartet",
+'@Voir la suite : la grande formation et le bon à savoir': 'See more: the large line-up and good-to-know details',
+'Solo guitare-voix': 'Solo singer-guitarist',
 }

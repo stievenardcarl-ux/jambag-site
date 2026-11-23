@@ -52,7 +52,7 @@ def PICK():
 
 
 MOMENT_ROWS = [
-    ("Cérémonie", "vers 16 h", "Laïque ou religieuse, entièrement personnalisable : entrée, échange des alliances, sortie. Nous apprenons les chansons qui vous ressemblent.", "Solo ou duo acoustique"),
+    ("Cérémonie", "vers 16 h", "Laïque ou religieuse, entièrement personnalisable : entrée, échange des alliances, sortie. Nous apprenons les chansons qui vous ressemblent.", "Solo guitare-voix"),
     ("Vin d'honneur", "vers 17 h", "Une ambiance chaleureuse, lounge ou déjà festive, qui laisse respirer les conversations puis fait se lever les premiers danseurs.", "Duo ou trio"),
     ("Soirée dansante", "vers 22 h", "Le quartet prend la piste. Deux heures de live où trois générations chantent les mêmes refrains.", "Quartet"),
     ("Jusqu'au bout de la nuit", "après le live", "Nos DJs partenaires prennent le relais, sans temps mort.", "Option DJ"),

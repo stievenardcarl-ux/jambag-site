@@ -103,7 +103,7 @@ def tr_attr(m):
     if k != "data-s" and re.search(r"[a-zA-Zà-ÿ]{3}", v) and not v.startswith(("http", "#")): missing.add("@" + v)
     return m.group(0)
 
-PAGE_LINK = re.compile(r'^(\./(#.*)?|[\w-]+\.html(#.*)?|blog/([\w-]+\.html)?)$')
+PAGE_LINK = re.compile(r'^(\./(#.*)?|[\w-]+\.html(\?[\w=&-]*)?(#.*)?|blog/([\w-]+\.html)?)$')
 def fix_path(m):
     k, v = m.group(1), m.group(2)
     if k == "data-srcs": return f'{k}="' + " ".join("../" + x for x in v.split()) + '"'
