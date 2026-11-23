@@ -344,4 +344,8 @@ NOV = {
 'Bien sûr. La cérémonie est entièrement personnalisable, et pour la soirée, nous intégrons vos chansons au show, y compris celles que nous apprenons spécialement pour vous. Racontez-nous ce qui compte pour vous : on en parle au téléphone, et on le prévoit dans le devis.': 'Of course. The ceremony is fully customisable, and for the party we work your songs into the show, including ones we learn especially for you. Tell us what matters to you: we talk it through on the phone and include it in the quote.',
 "Chaque formule a sa setlist, pensée pour que la soirée monte sans temps mort. C'est notre base de travail : nous la personnalisons avec vous, avec vos chansons et celles que nous apprenons spécialement pour votre événement.": "Each line-up has its own setlist, built so the evening rises with no dead time. It's our starting point: we tailor it with you, with your songs and the ones we learn especially for your event.",
 'Dites-le nous dans votre demande : Carl vous rappelle, et nous construisons votre setlist ensemble.': 'Tell us in your request: Carl calls you back, and we build your setlist together.',
+'Grande formation': 'Large line-up',
+'Bon à savoir': 'Good to know',
+'Et aussi : la grande formation, sur demande, et le bon à savoir': 'And also: the large line-up, on request, and good-to-know details',
+'@Sur cette page': 'On this page',
 }
